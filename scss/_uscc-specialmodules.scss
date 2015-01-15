@@ -1,0 +1,78 @@
+// Specific - P1B Connections
+
+body {background-color: $lightgray;}
+
+#page-wrapper {
+  margin: 0 !important;
+}
+
+.stagsanslight {font-family: "Stag Sans Light";}
+
+.try-again {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+small {
+  font-size: 65%;
+}
+
+fieldset {border: none;margin:0;padding:0;}
+a {text-decoration: none;}
+
+.devices li {
+  border: 1px solid $darkblue;
+}
+
+.elig-form {
+font-size: 16px;
+@extend .whitetext;
+  p { @extend .stagsanslight; }
+  input[type="text"] {
+    height: 33px;
+    font-size: 14px;
+    width: 100%;
+  }
+  label {
+    font-size: 14px;
+    padding-top: 14px;
+    padding-bottom: 7px;
+  }
+  label[type="text"] {
+    display: block;
+  }
+  .checkbox-wrapper {
+    padding-top: 10px;
+    input[type="checkbox"] {
+      font-size: 16px;
+    }
+  }
+  .checkbox-wrapper:first-child {
+    padding-top: 80px;
+  }
+  .zipcode-label {
+    position: relative;
+    top: -6px; 
+    font-size: 16px;
+  }
+  .invalid-highlight {
+  outline-color: red;
+  outline-offset: -2px;
+  outline-style: auto;
+  outline-width: 2px;
+  }
+  .valid {
+  outline-color: none;
+  outline-offset: none;
+  outline-style: none;
+  outline-width: none;
+  }
+  .button {
+    font-family: "Stag Sans Light";
+    border: none;
+    font-size: 16px;
+    padding: 7px 25px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+}

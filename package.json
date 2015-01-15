@@ -1,0 +1,11 @@
+{
+	"name": "usc-p1b-connections",
+	"version": "1.0.0",
+	"devDependencies": {
+		"grunt": "",
+		"grunt-contrib-sass": "",
+		"grunt-contrib-watch": "",
+		"grunt-autoprefixer": "",
+		"grunt-ftp": ""
+	}
+}

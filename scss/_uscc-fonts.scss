@@ -1,0 +1,33 @@
+ @font-face {
+  font-family: "Stag Sans Web USCC-Black";
+  src: url("fonts/Stag Sans Web USCC-Black.eot");
+  src: url("fonts/Stag Sans Web USCC-Black.eot?#iefix") format("embedded-opentype"),
+  url("fonts/Stag Sans Web USCC-Black.svg#font") format("svg"),
+  url("fonts/Stag Sans Web USCC-Black.otf") format("opentype"),
+  url("fonts/Stag Sans Web USCC-Black.ttf") format("truetype"),
+  url("fonts/Stag Sans Web USCC-Black.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+ @font-face {
+  font-family: "Stag Sans Web USCC-Book";
+  src: url("fonts/Stag Sans Web USCC-Book.eot");
+  src: url("fonts/Stag Sans Web USCC-Book.eot?#iefix") format("embedded-opentype"),
+  url("fonts/Stag Sans Web USCC-Book.svg#font") format("svg");
+  //url("fonts/Stag Sans Web USCC-Book.otf") format("opentype"),
+  //url("fonts/Stag Sans Web USCC-Book.ttf") format("truetype"),
+  //url("fonts/Stag Sans Web USCC-Book.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Stag Sans Light";
+  src: url("fonts/StagSansWebUSCC-Light.eot");
+  src: url("fonts/StagSansWebUSCC-Light.eot?#iefix") format("embedded-opentype"),
+  url("fonts/StagSansWebUSCC-Light.svg#font") format("svg"),
+  //url("fonts/StagSansWebUSCC-Light.otf") format("opentype"),
+  url("fonts/StagSansWebUSCC-Light.ttf") format("truetype"),
+  url("fonts/StagSansWebUSCC-Light.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}

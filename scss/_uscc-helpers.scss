@@ -1,0 +1,87 @@
+// *** US Cellular Brand Colors
+$slate: #D8E9E8;
+$darkblue: #0065A4;
+$lightgray: #F6F6F3;
+$darkgray: #636466;
+$mediumgray: #555;
+$red: #EE3040;
+
+// Font Variations
+.stagweb {
+  font-family: 'Stag Web USCC-Book', verdana, helvetica, sans-serif;
+}
+.stagsanslight {
+  font-family: "Stag Sans Web USCC-Light", sans-serif;
+  font-weight:100;
+}
+.stagsans {//Rounded text headlines
+font-family: "Stag Sans Web USCC-Black", sans-serif;
+font-weight:400;
+}
+
+// Text Color Variations
+.whitetext {color: white;}
+.darkgraytext {color: $darkgray;}
+.lightgraytext {color: $lightgray;}
+.mediumgraytext {color: $mediumgray;}
+.bluetext {color:$darkblue;}
+
+// BG Color Variations
+.whitebg {background-color: white;}
+.darkgraybg {background-color: $darkgray;}
+.lightgraybg {background-color: $lightgray;}
+.mediumgraybg {background-color: $mediumgray;}
+.bluebg {background-color:$darkblue;}
+.slatebg{background-color:$slate;}
+.redbg{background-color:$red;}
+
+// Module Variations
+.dropshadow {box-shadow: 0 3px 8px rgba(0,0,0,.2);}
+.bordered {
+ border: 1px solid #CCC; 
+}
+.white-bordered {//thick white borders usually reserved for hero modules
+  border: 8px white solid;
+}
+.roundedcorners {
+  border-radius: 3px;
+}
+.centered {
+  text-align: center;
+}
+.text-left {
+  text-align:left;
+}
+
+//Text Elements
+.banner {
+  padding: 20px;
+  background-image: linear-gradient(/*white to transparent*/
+                  rgba(255,255,255,.25), rgba(255,255,255,0)
+                  );
+}
+.verdana {
+  font-family: 'Verdana', sans-serif;
+}
+
+//Misc Helper Classes
+strong{ font-family:"Stag Web USCC-Medium", sans-serif; }
+.underline { text-decoration:underline;}
+.fullwidth {
+  width: 100%;
+}
+.inlineblock {
+  display: inline-block;
+}
+.inline {
+  display: inline;
+}
+.clear{clear:both;}
+.text-right {text-align:right;}
+.right {float:right;}
+.left {float:left;}
+.font-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: antialiased;
+  font-smooth: always;
+}

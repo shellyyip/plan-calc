@@ -1,0 +1,158 @@
+/* 
+ * US Cellular Landing Page Boilerplate
+ * uscc-boilerplate.scss: Basic styling for primary elements. Try not to declare colors here since landing pages tend to vary; use the color classes in uscc-helpers instead.
+ * uscc-helpers.scss: Helper classes for use in making style modifications in the HTML.
+ * uscc-special-modules: For non-basic modules that are unlikely to be used in future landing pages, and unique styling. Basically a catch-all.
+ * 
+ */
+
+ @font-face {
+  font-family: "Stag Sans Web USCC-Black";
+  src: url("/bighero6/Stag Sans Web USCC-Black.eot");
+  src: url("/bighero6/Stag Sans Web USCC-Black.eot?#iefix") format("embedded-opentype"),
+  url("/bighero6/Stag Sans Web USCC-Black.svg#font") format("svg"),
+  url("/bighero6/Stag Sans Web USCC-Black.otf") format("opentype"),
+  url("/bighero6/Stag Sans Web USCC-Black.ttf") format("truetype"),
+  url("/bighero6/Stag Sans Web USCC-Black.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+ @font-face {
+  font-family: "Stag Web USCC-Book";
+  src: url("/bighero6/Stag Web USCC-Book.eot");
+  src: url("/bighero6/Stag Web USCC-Book.eot?#iefix") format("embedded-opentype"),
+  url("/bighero6/Stag Web USCC-Book.svg#font") format("svg"),
+  url("/bighero6/Stag Web USCC-Book.otf") format("opentype"),
+  url("/bighero6/Stag Web USCC-Book.ttf") format("truetype"),
+  url("/bighero6/Stag Web USCC-Book.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+h2 {
+   font-family: "Stag Sans Web USCC-Black";
+}
+
+p {
+   font-family: "Stag Web USCC-Book";
+}
+
+#page-wrapper {
+//attach a bg class to wrapper in HTML to start the page on a blank canvas of color choice
+margin: -23px -8px -25px -9px;
+  a:hover {color: $darkblue;} 
+}
+
+// Resets
+h1, h2, h3, p {text-transform: none; margin:0;padding:0;}
+
+// Typography
+html {font-size: 10px;}//set root to 10px for easy rem math
+h1, .stagsans {//Rounded text headlines
+font-family: "Stag Sans Web USCC-Black", sans-serif;
+font-weight:400;
+}
+.stagweb {
+  font-family: 'Stag Web USCC-Book', verdana, helvetica, sans-serif;
+}
+.stagsanslight {
+  font-family: "Stag Sans Web USCC-Light", sans-serif;
+  font-weight:100;
+}
+//All other fonts default to slab-type text (Stag Web). Use the .stagsans helper class in HTML to change.
+h1 {font-size: 35px;}
+h2 {font-size: 2.6rem;font-size:26px;}
+h3 {font-size: 2.1rem;font-size:21px;}
+p {font-size: 1.3rem;font-size:13px;}
+sup {
+font-size: 12px;
+position: relative;
+top: -2px;
+}
+hr {
+border-bottom: 2px solid $darkblue;
+border-top: none;
+border-left: none;
+border-right: none;
+margin: 0;
+}
+// Modules
+.module {
+margin: 10px 0;
+padding: 10px;
+text-align: left;//reset
+background: {
+  repeat: no-repeat;
+  position: top left;
+  size: contain;
+}
+}
+.hero {
+padding: 10px;//reset
+text-align: left;
+border: 8px white solid;
+background: {
+  image: url('/bighero6/hero-bg.jpg');
+  repeat: no-repeat;
+  position: top left;
+  size: contain;
+}
+  hr {
+  width: 33%;
+  }
+  .module-content {
+  padding: 10px 20px 0 20px;
+  }
+  .lines {
+  border-top: 2px solid $darkblue;
+  border-bottom: 2px solid $darkblue;
+  width: 33%;  
+  }
+  h1 { 
+  padding: 5px 0;
+  width: 600px;
+  }
+  p {
+  font-size: 16px;
+  line-height: 16px;
+  }
+  a.button {
+  padding: 10px 20px;
+  margin: 20px 0;
+  }
+  img {width: 100%;}
+}
+footer {
+  p {
+    font-size:10px;
+    line-height:12px;
+  }
+  strong {
+    font-weight: bold;
+  }
+}
+
+//Buttons
+.button {
+display: inline-block;
+border: none;
+padding: 7.5px 20px;
+margin: 7.5px 0;
+cursor: pointer;
+background-image: linear-gradient(/*white to transparent*/
+                  rgba(255,255,255,.25), rgba(255,255,255,0)
+                  );
+  p {
+    font-size:16px;
+    line-height:16px;
+  }
+}
+.button:hover {
+  color: white !important;
+}
+.button.redbg:hover {
+  background-color: $darkblue;
+}
+.button.bluebg:hover {
+  @extend .redbg;
+}
