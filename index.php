@@ -63,14 +63,14 @@
 			<h2>Stop by one of our locations <br>to seal the deal.</h2>
 
 			<div class="elig-form">
-				<form id="bg6-zipcode-form" method="get" action="https://www.uscellularetf.com/api/store">
+				<form id="bg6-zipcode-form" method="get" action="https://usc-etf.ngrok.com/api/store">
 					<p class="zipcode-label">Zip Code *</p>
 				  	<fieldset>
 						<input type="text" class="reqFields" required="required" id="zipcode" name="zipcode" pattern=".{5,5}">
-						<button id="bg6-zip-submit" class="button redbg whitetext" type="submit">Find A Store</button>
+						<button id="zip-submit" class="button redbg whitetext" type="submit">Find A Store</button>
 					</fieldset>
 				</form>
-				<p id="form-errors"></p>
+				<p id="form-errors"></p>/
 			</div>
 
 			<div id="store-list">
@@ -79,10 +79,6 @@
 				<div class="clear"></div>
 			</div>
 		</div>
-	</div>
-
-	<div class="module slate-bg find-accessories">
-		<a id="bg6-findaccessories" href="http://www.uscellular.com/uscellular/accessories/showAccessories.jsp?openShopping=true" class="button redbg whitetext" target="_blank">Browse Accessories</a>
 	</div>
 
 	<footer class="module">

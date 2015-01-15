@@ -2,3 +2,5 @@
 node_modules/
 package.json
 Gruntfile.js
+*.sublime-project
+*.sublime-workspace

@@ -145,3 +145,20 @@ $( "#dataplan" ).val( sliderVal );
 $('.total-gbs').text( sliderVal );
 
 updateAll();
+
+$("#zip-submit").on('click', function(e) {
+	e.preventDefault();
+	$.ajax({
+		url: 'https://usc-etf.ngrok.com/api/store',
+		type: 'GET',
+		data: 'zipcode='+$("#zipcode").val(),
+		success: function(data) { 
+		  //var data = window.JSON.parse(data);
+		  if(data.stores == false) {
+		    noStores();
+		  } else {
+		    success(data.stores);
+		  }
+		}
+	});
+});
