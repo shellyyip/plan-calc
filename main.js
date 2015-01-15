@@ -1,5 +1,4 @@
 // p1b-digitalPlanConnections
-var USCP1B = USCP1B || {};
 var totalPlan = {
 	totalDeviceNum: 0,
 	totalCost: 0
@@ -15,16 +14,14 @@ $deviceList.each(function() {
 });
 
 // **** Data Plans
-USCP1B.DataPlan = function(gbs, cost) {
-	this.gbs = gbs;
-	this.cost = cost;
-};
-var gbs10 = new USCP1B.DataPlan(10, 90);
-var gbs12 = new USCP1B.DataPlan(12, 110);
-var gbs14 = new USCP1B.DataPlan(14, 120);
-var gbs16 = new USCP1B.DataPlan(16, 130);
-var gbs18 = new USCP1B.DataPlan(18, 140);
-var gbs20 = new USCP1B.DataPlan(20, 150);
+var dataPlans = [
+	{gbs: 10, cost: 90},
+	{gbs: 12, cost: 110},
+	{gbs: 14, cost: 120},
+	{gbs: 16, cost: 130},
+	{gbs: 18, cost: 140},
+	{gbs: 20, cost: 150}
+];
 
 // **** Functions 
 var toggleMinus = function() {// Checks if minus button will make quantity go negative, and toggles on/off accordingly
@@ -38,7 +35,7 @@ var toggleMinus = function() {// Checks if minus button will make quantity go ne
 		}
 	});
 }
-var updateDeviceNum = function() {
+var updateDeviceNum = function() {// Count devices
 	var total = 0;
 	$deviceList.each(function() {
 		var $this = $(this);
@@ -64,12 +61,52 @@ var updateDeviceNum = function() {
 	totalPlan.totalDeviceNum = total;
 	$('.total-devices').text(totalPlan.totalDeviceNum);
 }
-var calcCost = function() {
-	console.log(allDevices);
+var calcCost = function() {// Calculate package cost
+	// ** Sum up devices
+	var deviceSubtotal = 0;
+	for (var i=0;i<allDevices.length;i++) {
+		device = allDevices[i];
+		var cost = device.num * device.costper;
+		deviceSubtotal+=cost;
+	}
+	// ** Get data plan cost
+	var gbs = $( "#dataplan" ).val();
+	var obj = $.grep(dataPlans, function(e){ 
+		return e.gbs == gbs; 
+	});
+	var dataCost = obj[0].cost;
+	// ** Total
+	var finTotal = dataCost + deviceSubtotal;
+	// Print total
+	$('.total-cost').text(finTotal);
 }
-var updateAll = function() {
+var debugReceipt = function() {// Print costs to console for debugging
+	// ** Sum up devices
+	var deviceSubtotal = 0;
+	console.log('**********');
+	for (var i=0;i<allDevices.length;i++) {
+		device = allDevices[i];
+		var cost = device.num * device.costper;
+		console.log(device.device+': '+device.num+' x $'+device.costper+' = $'+cost);
+		deviceSubtotal+=cost;
+	}
+	console.log('-----------');
+	console.log('Device Subtotal: $'+deviceSubtotal);
+	// ** Get data plan cost
+	var gbs = $( "#dataplan" ).val();
+	var obj = $.grep(dataPlans, function(e){ 
+		return e.gbs == gbs; 
+	});
+	var dataCost = obj[0].cost;
+	console.log('Data Subtotal: $'+dataCost);
+	// ** Total
+	var finTotal = dataCost + deviceSubtotal;
+	console.log('Total: $'+finTotal);
+}
+var updateAll = function() {// Run all functions
 	updateDeviceNum();
 	calcCost();
+	debugReceipt();
 }
 
 // **** Events 
@@ -91,4 +128,20 @@ $minus.on('click', function() {
 });
 
 // **** Init
+$('#dataplan-slider').slider({
+	value: 10,
+	min: 10,
+	max: 20,
+	step: 2,
+	slide: function( event, ui ) {
+		$( "#dataplan" ).val( ui.value );
+		$('.total-gbs').text(ui.value);
+		calcCost();
+		debugReceipt();
+	}
+});
+var sliderVal = $( "#dataplan-slider" ).slider( "value" );
+$( "#dataplan" ).val( sliderVal );
+$('.total-gbs').text( sliderVal );
+
 updateAll();

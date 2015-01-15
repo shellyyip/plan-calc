@@ -12,55 +12,40 @@
 				Basic Phone ($20)
 				<span class="quantity"></span>
 				<div class="num-spinner">
-					<button class="spinner-plus">
-						+
-					</button>
-					<button class="spinner-minus">
-						-
-					</button>
+					<button class="spinner-plus"> + </button>
+					<button class="spinner-minus"> - </button>
 				</div>
 			</li>
 			<li data-device="hotspot" data-costPer="20" data-num="0">
 				Hotspot ($20)
 				<span class="quantity"></span>
 				<div class="num-spinner">
-					<button class="spinner-plus">
-						+
-					</button>
-					<button class="spinner-minus">
-						-
-					</button>
+					<button class="spinner-plus"> + </button>
+					<button class="spinner-minus"> - </button>
 				</div>
 			</li>
 			<li data-device="smart-phone" data-costPer="10" data-num="1">
 				Smartphone ($10)
 				<span class="quantity"></span>
 				<div class="num-spinner">
-					<button class="spinner-plus">
-						+
-					</button>
-					<button class="spinner-minus">
-						-
-					</button>
+					<button class="spinner-plus"> + </button>
+					<button class="spinner-minus"> - </button>
 				</div>
 			</li>
 			<li data-device="tablet" data-costPer="10" data-num="1">
 				Tablet ($10)
 				<span class="quantity"></span>
 				<div class="num-spinner">
-					<button class="spinner-plus">
-						+
-					</button>
-					<button class="spinner-minus">
-						-
-					</button>
+					<button class="spinner-plus"> + </button>
+					<button class="spinner-minus"> - </button>
 				</div>
 			</li>
 		</ul>
 
 		<div class="dataplans">
 			<h2>Choose your shared data.</h2>
-			<input type="number" id="num-gbs" name="num-gbs"></input>
+			<input type="text" id="dataplan" readonly hidden>
+			<div id="dataplan-slider"></div>
 		</div>
 
 		<div>
@@ -110,4 +95,5 @@
 <script src="/bighero6/html5shiv-printshiv.js"></script>
 <!-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="lib/js/jquery-ui.min.js"></script>
 <script src="main.js"></script>
