@@ -13,21 +13,44 @@ var totalPlan = {
 	totalDeviceNum: 0,
 	totalCost: 0
 };
-var printQuantities = function() {
-
-}
-var updateDeviceNum = function() {
-	$deviceList.each(function() {
-		var $this = $(this);
-		var num = $this.data('num');
-		$this.find('.quantity').text(num);
-	});
-}
-
-
 
 var $plus = $('.spinner-plus');
 var $minus = $('.spinner-minus');
+
+var updateDeviceNum = function() {
+	var total = 0;
+	$deviceList.each(function() {
+		var $this = $(this);
+		var num = $this.data('num');
+		//Print quantities next to each device
+		$this.find('.quantity').text(num);
+		//Calc total quantity
+		total+=num;
+	});
+	// ** Enforce min/max quantities
+	if (total == 10) {
+		//Disable all plus buttons
+		$plus.prop('disabled', true);
+	} else if (total == 2) {
+		//Disable all minus buttons
+		$minus.prop('disabled', true);
+	} else {
+		$plus.prop('disabled', false);
+		//Prevent negative quantities
+		$deviceList.each(function() {
+			var $this = $(this);
+			var num = $this.data('num');
+			if (num == 0) {
+				$this.find('.spinner-minus').prop('disabled',true);
+			} else {
+				$this.find('.spinner-minus').prop('disabled',false);
+			}
+		});
+	}
+	// ** Update & print total
+	totalPlan.totalDeviceNum = total;
+	$('.total-devices').text(totalPlan.totalDeviceNum);
+}
 
 $plus.on('click', function() {
 	var device = $(this).parents('[data-device]').data('device');

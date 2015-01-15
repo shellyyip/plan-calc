@@ -64,11 +64,11 @@
 		</div>
 
 		<div>
-		Total Devices: <span id="total-devices"></span>
+		Total Devices: <span class="total-devices"></span>
 		<br>
-		Total GB: <span id="total-gbs"></span>
+		Total GB: <span class="total-gbs"></span>
 		<br>
-		Your cost per month: <span id="total-cost"></span>
+		Your cost per month: <span class="total-cost"></span>
 		<br>
 		</div>
 	</div>
