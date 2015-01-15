@@ -17,6 +17,19 @@ var totalPlan = {
 var $plus = $('.spinner-plus');
 var $minus = $('.spinner-minus');
 
+var preventNegNum = function() {
+	console.log('**************');
+	$deviceList.each(function() {
+		var $this = $(this);
+		var num = $this.data('num');
+		console.log('Quant of '+$this.data('device')+' is '+num);
+		if (num == 0) {
+			$this.find('.spinner-minus').prop('disabled',true);
+		} else {
+			$this.find('.spinner-minus').prop('disabled',false);
+		}
+	});
+}
 var updateDeviceNum = function() {
 	var total = 0;
 	$deviceList.each(function() {
@@ -31,21 +44,13 @@ var updateDeviceNum = function() {
 	if (total == 10) {
 		//Disable all plus buttons
 		$plus.prop('disabled', true);
+		preventNegNum();
 	} else if (total == 2) {
 		//Disable all minus buttons
 		$minus.prop('disabled', true);
 	} else {
 		$plus.prop('disabled', false);
-		//Prevent negative quantities
-		$deviceList.each(function() {
-			var $this = $(this);
-			var num = $this.data('num');
-			if (num == 0) {
-				$this.find('.spinner-minus').prop('disabled',true);
-			} else {
-				$this.find('.spinner-minus').prop('disabled',false);
-			}
-		});
+		preventNegNum();
 	}
 	// ** Update & print total
 	totalPlan.totalDeviceNum = total;
