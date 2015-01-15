@@ -3,33 +3,47 @@ var USCP1B = USCP1B || {};
 console.log('******** starting p1b');
 
 // Devices
-var allDevices = $('.devices').find('li').each(function() {
-	console.log(this);
+var allDevices = [];
+$deviceList = $('ul.devices').find('li');
+$deviceList.each(function() {
+	allDevices.push($(this).data());
 });
-
-
-console.log(allDevices);
 
 var totalPlan = {
 	totalDeviceNum: 0,
 	totalCost: 0
 };
-
-var updateDeviceNum = function() {
+var printQuantities = function() {
 
 }
+var updateDeviceNum = function() {
+	$deviceList.each(function() {
+		var $this = $(this);
+		var num = $this.data('num');
+		$this.find('.quantity').text(num);
+	});
+}
+
+
 
 var $plus = $('.spinner-plus');
 var $minus = $('.spinner-minus');
 
 $plus.on('click', function() {
-	//add to object of parent
 	var device = $(this).parents('[data-device]').data('device');
 	var obj = $.grep(allDevices, function(e){ 
 		return e.device == device; 
 	});
 	obj[0]['num']+=1
-	console.log(obj);
+	updateDeviceNum();
+});
+$minus.on('click', function() {
+	var device = $(this).parents('[data-device]').data('device');
+	var obj = $.grep(allDevices, function(e){ 
+		return e.device == device; 
+	});
+	obj[0]['num']-=1
+	updateDeviceNum();
 });
 
 
@@ -44,3 +58,5 @@ var gbs14 = new USCP1B.DataPlan(14, 120);
 var gbs16 = new USCP1B.DataPlan(16, 130);
 var gbs18 = new USCP1B.DataPlan(18, 140);
 var gbs20 = new USCP1B.DataPlan(20, 150);
+
+updateDeviceNum();
