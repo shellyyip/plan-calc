@@ -1,10 +1,12 @@
 // *** US Cellular Brand Colors
 $slate: #D8E9E8;
-$darkblue: #0065A4;
+$darkblue: #17477e;
+$mediumblue: #007ac2;
 $lightgray: #F6F6F3;
 $darkgray: #636466;
 $mediumgray: #555;
 $red: #EE3040;
+$dirtyskyblue: #edf0f2;
 
 // Font Variations
 .stagweb {
@@ -24,7 +26,8 @@ font-weight:400;
 .darkgraytext {color: $darkgray;}
 .lightgraytext {color: $lightgray;}
 .mediumgraytext {color: $mediumgray;}
-.bluetext {color:$darkblue;}
+.darkbluetext {color:$darkblue;}
+.mediumbluetext {color:$mediumblue;}
 
 // BG Color Variations
 .whitebg {background-color: white;}
@@ -34,6 +37,7 @@ font-weight:400;
 .bluebg {background-color:$darkblue;}
 .slatebg{background-color:$slate;}
 .redbg{background-color:$red;}
+.dirtyskybluebg{background-color:$dirtyskyblue;}
 
 // Module Variations
 .dropshadow {box-shadow: 0 3px 8px rgba(0,0,0,.2);}

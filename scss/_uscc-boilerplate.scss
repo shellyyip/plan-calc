@@ -6,30 +6,23 @@
  * 
  */
 
-h2 {
-   font-family: "Stag Sans Web USCC-Black";
-}
-
-p {
-   font-family: "Stag Sans Web USCC-Book";
-}
-
 #page-wrapper {
 //attach a bg class to wrapper in HTML to start the page on a blank canvas of color choice
-margin: -23px -8px -25px -9px;
+//margin: -23px -8px -25px -9px;
   a:hover {color: $darkblue;} 
 }
 
 // Resets
 h1, h2, h3, p {text-transform: none; margin:0;padding:0;}
+a {text-decoration: none;}
+fieldset {border: none;margin:0;padding:0;}
 
 // Typography
-//html {font-size: 10px;}//set root to 10px for easy rem math
-h1, h2 {@extend .stagsanslight;}
+body {@extend .stagsanslight;}
 
-//All other fonts default to slab-type text (Stag Web). Use the .stagsans helper class in HTML to change.
+//Fonts default to Stag Sans Light. Use font helper classes (see helpers.scss) in HTML to change fonts.
 h1 {font-size: 35px;}
-h2 {font-size:26px;}
+h2 {font-size: 26px;}
 h3 {font-size:21px;}
 p {font-size:13px;}
 sup {
