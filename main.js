@@ -35,6 +35,17 @@ var toggleMinus = function() {// Checks if minus button will make quantity go ne
 		}
 	});
 }
+var toggleQuantity = function() {// Checks if device quantity is 0 and makes the circle invisible if so
+	$deviceList.each(function() {
+		var $this = $(this);
+		var num = $this.data('num');
+		if (num == 0) {
+			$this.find('.quantity').hide();
+		} else {
+			$this.find('.quantity').show();
+		}
+	});
+}
 var updateDeviceNum = function() {// Count devices
 	var total = 0;
 	$deviceList.each(function() {
@@ -105,6 +116,7 @@ var debugReceipt = function() {// Print costs to console for debugging
 }
 var updateAll = function() {// Run all functions
 	updateDeviceNum();
+	toggleQuantity();
 	calcCost();
 	debugReceipt();
 }
