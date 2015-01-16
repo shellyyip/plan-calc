@@ -56,9 +56,10 @@ ul.devices li {
     #dataplan-slider, .slider-ticks {
       left: 50%;
       margin-left: -47%;//half of width
-      top: 14px;
+      
     }
     #dataplan-slider {
+      top: 14px;
       width: 93%;
       border: none;//reset
       background: none;//reset
@@ -74,9 +75,10 @@ ul.devices li {
       }
     }
     .slider-ticks {
+      top: 9px;
       width: 94%;//needs to be slightly wider than slider to account for slight drift in tick/handle alignment
       position: absolute;
-      font-size: 18px;
+      font-size: 25px;
       text-align: justify;
       span {
         vertical-align: middle;
