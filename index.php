@@ -69,18 +69,22 @@
 			</ul>
 
 			<div class="dataplans">
-				<h2>Choose your shared data.</h2>
+				<h2 class="centered">Choose your shared data.</h2>
 				<input type="text" id="dataplan" readonly hidden>
-				<div id="dataplan-slider"></div>
+				<h2 class="inlineblock">10GB</h2>
+				<div class="dataplan-slider-container">
+					<div id="dataplan-slider"></div>
+				</div>
+				<h2 class="inlineblock">20GB</h2>
 			</div>
 
-			<div>
-			Total Devices: <span class="total-devices"></span>
-			<br>
-			Total GB: <span class="total-gbs"></span>
-			<br>
-			Your cost per month: <span class="total-cost"></span>
-			<br>
+			<div class="totals">
+				Total Devices: <span class="total-devices"></span>
+				<br>
+				Total GB: <span class="total-gbs"></span>
+				<br>
+				Your cost per month: <span class="total-cost"></span>
+				<br>
 			</div>
 		</div>
 	</div>
@@ -118,4 +122,5 @@
 <!-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="lib/js/jquery-ui.min.js"></script>
+<script src="lib/js/jquery.ui.touch-punch.min.js"></script>
 <script src="main.js"></script>

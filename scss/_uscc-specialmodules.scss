@@ -38,6 +38,26 @@ ul.devices li {
   }
 }
 
+// ** Data Plan Slider
+.dataplans {
+  padding: 50px 0;
+  h2 {padding-bottom: 15px;}
+}
+.dataplan-slider-container {
+  width: 80%;
+  display: inline-block;
+}
+#dataplan-slider {
+  .ui-slider-handle {
+    border: none;
+    background: none; //override jquery ui's background
+    background: {
+      image: url('images/slider-handle.png');
+      size: contain;
+    };
+  }
+}
+
 // ** Store Locator
 .store-locator {
 text-align: center;
