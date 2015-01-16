@@ -29,8 +29,8 @@
 					</div>
 					<p>Basic Phone ($20)</p>
 					<div class="num-spinner">
-						<button class="spinner-plus"> + </button>
 						<button class="spinner-minus"> - </button>
+						<button class="spinner-plus"> + </button>
 					</div>
 				</li>
 				<li data-device="hotspot" data-costPer="20" data-num="0">
@@ -40,8 +40,8 @@
 					</div>
 					<p>Hotspot ($20)</p>
 					<div class="num-spinner">
-						<button class="spinner-plus"> + </button>
 						<button class="spinner-minus"> - </button>
+						<button class="spinner-plus"> + </button>
 					</div>
 				</li>
 				<li data-device="smart-phone" data-costPer="10" data-num="1">
@@ -51,8 +51,8 @@
 					</div>
 					<p>Smartphone ($10)</p>
 					<div class="num-spinner">
-						<button class="spinner-plus"> + </button>
 						<button class="spinner-minus"> - </button>
+						<button class="spinner-plus"> + </button>
 					</div>
 				</li>
 				<li data-device="tablet" data-costPer="10" data-num="1">
@@ -62,8 +62,8 @@
 					</div>
 					<p>Tablet ($10)</p>
 					<div class="num-spinner">
-						<button class="spinner-plus"> + </button>
 						<button class="spinner-minus"> - </button>
+						<button class="spinner-plus"> + </button>
 					</div>
 				</li>
 			</ul>
@@ -89,12 +89,16 @@
 			</div>
 
 			<div class="totals">
-				Total Devices: <span class="total-devices"></span>
-				<br>
-				Total GB: <span class="total-gbs"></span>
-				<br>
-				Your cost per month: <span class="total-cost"></span>
-				<br>
+				<div class="device-data-quantity centered">
+					<h1><span class="total-devices"></span> Devices</h1>
+					<h1>&mdash; & &mdash;</h1>
+					<h1><span class="total-gbs"></span> GB</h1>
+				</div>
+				<div class="cost-per-month centered">
+					<h2>Your cost per month</h2>
+					<h1>$<span class="total-cost"></span></h1>
+				</div>
+				<p class="centered">This is for illustrative purposes only. Price is dependent on selected devices and Shared Data Plan.</p>
 			</div>
 		</div>
 	</div>
