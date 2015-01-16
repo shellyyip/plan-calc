@@ -24,6 +24,28 @@ a {text-decoration: none;}
   border: 1px solid $darkblue;
 }
 
+.store-locator {
+text-align: center;
+background-image: url("images/bg-map.jpg");
+background-size: cover;
+padding: 3rem 0;
+  .white-overlay {
+  background: white;/* IE8 fallback, do not remove */
+  background-color: rgba(255,255,255,0.8);
+  padding: 2rem 1rem;
+  }
+  #store-list {
+  text-align: left;
+    ul {
+    list-style-type: none;
+    font-size: 14px;
+      .store-name { color: $darkblue; }
+      .store-address { color: $mediumgray; }
+      .get-directions { color: $darkblue; }
+    }
+  }
+}
+
 .elig-form {
 font-size: 16px;
 @extend .whitetext;

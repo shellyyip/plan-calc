@@ -63,14 +63,14 @@
 			<h2>Stop by one of our locations <br>to seal the deal.</h2>
 
 			<div class="elig-form">
-				<form id="bg6-zipcode-form" method="get" action="https://usc-etf.ngrok.com/api/store">
+				<form id="zipcode-form" method="get" action="https://usc-etf.ngrok.com/api/store">
 					<p class="zipcode-label">Zip Code *</p>
 				  	<fieldset>
-						<input type="text" class="reqFields" required="required" id="zipcode" name="zipcode" pattern=".{5,5}">
+						<input type="text" class="reqFields" required="required" id="zipcode" name="zipcode" placeholder="ZIP CODE" pattern=".{5,5}">
 						<button id="zip-submit" class="button redbg whitetext" type="submit">Find A Store</button>
 					</fieldset>
 				</form>
-				<p id="form-errors"></p>/
+				<p id="form-errors"></p>
 			</div>
 
 			<div id="store-list">

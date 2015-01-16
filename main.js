@@ -109,13 +109,55 @@ var updateAll = function() {// Run all functions
 	debugReceipt();
 }
 
+var noStores = function() {
+  $(".store-locator").hide();
+  $('#form-errors').text("We're sorry, there are no stores in your area.");
+}
+
+var success = function(stores) {
+  $(".store-locator").show();
+  //Clear addresses, error messages first
+  $('#store-list ul').empty();
+  $('#form-errors').empty();
+  $(stores).each(function(i) {
+    var address_1 = stores[i].address_1;
+    var address_2 = stores[i].address_2;
+    var city = stores[i].city;
+    var state = stores[i].state;
+    var zipcode = stores[i].zipcode;
+    if (stores[i].address_2.length > 0) {
+      $('#store-list ul').append('<li>'
+         +'<p class="store-name"><strong>'+stores[i].name+'</strong></p>'
+         +'<p class="store-address">'+address_1+'</br>'
+         +address_2+'</br>'
+         +city+', '
+         +state+' '
+         +zipcode+'</br>'
+         +'<p class="get-directions"><strong><a target="_blank" href="https://www.google.com/maps/dir//'+address_1+'+'+address_2+',+'+city+',+'+state+'+'+zipcode+'">Get Directions >></a></strong></p>'
+         +'</li>'); 
+    } else {
+      $('#store-list ul').append('<li>'
+         +'<p class="store-name"><strong>'+stores[i].name+'</strong></p>'
+         +'<p class="store-address">'+address_1+'</br>'
+         +city+', '
+         +state+' '
+         +zipcode+'</br>'
+         +'<p class="get-directions"><strong><a target="_blank" href="https://www.google.com/maps/dir//'+address_1+'+'+address_2+',+'+city+',+'+state+'+'+zipcode+'">Get Directions >></a></strong></p>'
+         +'</li>'); 
+    }
+    // $('#store-list ul .get-directions strong a').unbind('click').on('click',function() {
+    //   ga('send', 'event', 'Get Directions Link Click BH6 Results', 'Click', 'Get Store Directions - BH6');
+    // });
+  });
+};
+
 // **** Events 
 $plus.on('click', function() {
 	var device = $(this).parents('[data-device]').data('device');
 	var obj = $.grep(allDevices, function(e){ 
 		return e.device == device; 
 	});
-	obj[0]['num']+=1
+	obj[0]['num']+=1;
 	updateAll();
 });
 $minus.on('click', function() {
@@ -123,11 +165,26 @@ $minus.on('click', function() {
 	var obj = $.grep(allDevices, function(e){ 
 		return e.device == device; 
 	});
-	obj[0]['num']-=1
+	obj[0]['num']-=1;
 	updateAll();
 });
+$("#zip-submit").on('click', function(e) {
+	e.preventDefault();
+	$.ajax({
+		url: 'https://www.uscellularetf.com/api/store',
+		type: 'GET',
+		data: 'zipcode='+$("#zipcode").val(),
+		success: function(data) { 
+		  //var data = window.JSON.parse(data);
+		  if(data.stores == false) {
+		    noStores();
+		  } else {
+		    success(data.stores);
+		  }
+		}
+	});
+});
 
-// **** Init
 $('#dataplan-slider').slider({
 	value: 10,
 	min: 10,
@@ -144,21 +201,6 @@ var sliderVal = $( "#dataplan-slider" ).slider( "value" );
 $( "#dataplan" ).val( sliderVal );
 $('.total-gbs').text( sliderVal );
 
-updateAll();
 
-$("#zip-submit").on('click', function(e) {
-	e.preventDefault();
-	$.ajax({
-		url: 'https://usc-etf.ngrok.com/api/store',
-		type: 'GET',
-		data: 'zipcode='+$("#zipcode").val(),
-		success: function(data) { 
-		  //var data = window.JSON.parse(data);
-		  if(data.stores == false) {
-		    noStores();
-		  } else {
-		    success(data.stores);
-		  }
-		}
-	});
-});
+// **** Init
+updateAll();
