@@ -75,12 +75,12 @@
 				<div class="dataplan-slider-container">
 					<div id="dataplan-slider"></div>
 					<div class="slider-ticks">
-						<span>&sdot;</span> 
-						<span>&sdot;</span> 
-						<span>&sdot;</span> 
-						<span>&sdot;</span> 
-						<span>&sdot;</span> 
-						<span>&sdot;</span> 
+						<span>&bull;</span> 
+						<span>&bull;</span> 
+						<span>&bull;</span> 
+						<span>&bull;</span> 
+						<span>&bull;</span> 
+						<span>&bull;</span> 
 						<span class="justify-break"></span>
 					</div>
 				</div>

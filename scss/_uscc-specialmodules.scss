@@ -44,14 +44,29 @@ ul.devices li {
   h2 {padding-bottom: 15px;}
   text-align: justify;
   .dataplan-slider-container {
+    background-color: rgba(0,0,0,.05);
+    border: 1px solid #ddd;
+    border-radius: 30px;
     width: 80%;
     display: inline-block;
     position: relative;
     text-align: justify;
+    height: 46px;
+    vertical-align: middle;
+    #dataplan-slider, .slider-ticks {
+      left: 50%;
+      margin-left: -47%;//half of width
+      top: 14px;
+    }
     #dataplan-slider {
+      width: 93%;
+      border: none;//reset
+      background: none;//reset
       .ui-slider-handle {
         border: none;
         background: none; //override jquery ui's background
+        height: 30px;
+        width: 30px;
         background: {
           image: url('images/slider-handle.png');
           size: contain;
@@ -59,10 +74,14 @@ ul.devices li {
       }
     }
     .slider-ticks {
+      width: 94%;//needs to be slightly wider than slider to account for slight drift in tick/handle alignment
       position: absolute;
-      top: 0;
-      width: 100%;
+      font-size: 18px;
       text-align: justify;
+      span {
+        vertical-align: middle;
+        color: #aaa;
+      }
     }
   }
 }
