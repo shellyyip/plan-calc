@@ -74,8 +74,18 @@
 				<h2 class="inlineblock">10GB</h2>
 				<div class="dataplan-slider-container">
 					<div id="dataplan-slider"></div>
+					<div class="slider-ticks">
+						<span>&sdot;</span> 
+						<span>&sdot;</span> 
+						<span>&sdot;</span> 
+						<span>&sdot;</span> 
+						<span>&sdot;</span> 
+						<span>&sdot;</span> 
+						<span class="justify-break"></span>
+					</div>
 				</div>
 				<h2 class="inlineblock">20GB</h2>
+				<div class="justify-break"></div>
 			</div>
 
 			<div class="totals">

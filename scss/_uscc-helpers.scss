@@ -89,3 +89,8 @@ strong{ font-family:"Stag Web USCC-Medium", sans-serif; }
   -moz-osx-font-smoothing: antialiased;
   font-smooth: always;
 }
+.justify-break {//needed for justify full-width grid trick
+  width: 100%;
+  height: 0;
+  display: inline-block;
+}
