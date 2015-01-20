@@ -25,7 +25,7 @@
 				<li data-device="basic-phone" data-costPer="20" data-num="0">
 					<div class="device-img">
 						<img src="images/device-basicphone.png"/>
-						<span class="quantity"></span>
+						<div class="quantity"></div>
 					</div>
 					<p>Basic Phone ($20)</p>
 					<div class="num-spinner">
@@ -36,7 +36,7 @@
 				<li data-device="hotspot" data-costPer="20" data-num="0">
 					<div class="device-img">
 						<img src="images/device-hotspot.png"/>
-						<span class="quantity"></span>
+						<div class="quantity"></div>
 					</div>
 					<p>Hotspot ($20)</p>
 					<div class="num-spinner">
@@ -47,7 +47,7 @@
 				<li data-device="smart-phone" data-costPer="10" data-num="1">
 					<div class="device-img">
 						<img src="images/device-smartphone.png"/>
-						<span class="quantity"></span>
+						<div class="quantity"></div>
 					</div>
 					<p>Smartphone ($10)</p>
 					<div class="num-spinner">
@@ -58,7 +58,7 @@
 				<li data-device="tablet" data-costPer="10" data-num="1">
 					<div class="device-img">
 						<img src="images/device-tablet.png"/>
-						<span class="quantity"></span>
+						<div class="quantity"></div>
 					</div>
 					<p>Tablet ($10)</p>
 					<div class="num-spinner">
