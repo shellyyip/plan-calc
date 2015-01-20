@@ -107,7 +107,7 @@
 
 	<div class="module slate-bg store-locator">
 		<div class="white-overlay">
-			<h2>Stop by one of our locations <br>to seal the deal.</h2>
+			<h2 class="mediumbluetext">Stop by one of our locations <br>to seal the deal.</h2>
 
 			<div class="elig-form">
 				<form id="zipcode-form" method="get" action="https://usc-etf.ngrok.com/api/store">
