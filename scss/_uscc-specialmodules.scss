@@ -5,7 +5,7 @@ body {color: #666;}
 .main-plan {
   h1 {font-size: 50px;}
   h2 {font-size: 18px;}
-  padding: 40px 50px;
+  padding: 40px 50px 18px;
   .module-header {
     padding-bottom: 20px;
     h2 {padding: 15px 0;}
@@ -87,6 +87,43 @@ ul.devices li {
         color: #aaa;
       }
     }
+  }
+}
+.totals {
+  height: 144px;
+  padding-bottom: 30px;
+  > div {
+    display: inline-block;
+    width: 49%;
+    position: relative;
+    float: left;
+  }
+  // Device totals
+  .device-data-quantity {
+    h1 {
+      font-size: 36px;
+    }
+  }
+  // Total $
+  .cost-per-month:before {//for vert centering
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em;
+  }
+  .cost-per-month {
+    > div {
+      vertical-align: middle;
+      display: inline-block;
+    }
+  }
+  .total-devices, .total-gbs {
+    font-size: 150%;
+  }
+  .total-cost-container {
+    font-size: 82px;
+    letter-spacing: -5px;
   }
 }
 

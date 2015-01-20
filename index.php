@@ -89,17 +89,19 @@
 			</div>
 
 			<div class="totals">
-				<div class="device-data-quantity centered">
-					<h1><span class="total-devices"></span> Devices</h1>
-					<h1>&mdash; & &mdash;</h1>
+				<div class="device-data-quantity centered darkbluetext">
+					<h1 class=""><span class="total-devices"></span> Devices</h1>
+					<h1 class="lightgraytext">&mdash; & &mdash;</h1>
 					<h1><span class="total-gbs"></span> GB</h1>
 				</div>
 				<div class="cost-per-month centered">
-					<h2>Your cost per month</h2>
-					<h1>$<span class="total-cost"></span></h1>
+					<div>
+						<h2>Your cost per month</h2>
+						<h1 class="total-cost-container mediumbluetext">$<span class="total-cost"></span></h1>
+					</div>
 				</div>
-				<p class="centered">This is for illustrative purposes only. Price is dependent on selected devices and Shared Data Plan.</p>
 			</div>
+			<p class="centered clear">This is for illustrative purposes only. Price is dependent on selected devices and Shared Data Plan.</p>
 		</div>
 	</div>
 
