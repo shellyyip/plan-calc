@@ -2,6 +2,17 @@
 
 body {color: #666;}
 h2 {line-height: 120%;}
+button:focus {
+  outline: none;
+}
+
+.vertical-rule {
+  border-right: 2px solid $lightgray;
+  width: 1px;
+  height: 32px;
+  display: inline-block;
+  vertical-align: sub;
+}
 
 .main-plan {
   h1 {font-size: 50px;}
@@ -53,6 +64,18 @@ ul.devices {
   }
 }
 
+.spinner-minus, .spinner-plus {
+  border: none;
+  background: none;
+  font-size: 40px;
+  @extend .stagsanslight;
+  padding: 10px 30px;
+  @extend .mediumbluetext;
+  &:disabled {
+    @extend .lightgraytext;
+  }
+}
+
 // ** Data Plan Slider
 .dataplans {
   padding: 50px 0;
@@ -87,6 +110,9 @@ ul.devices {
           image: url('images/slider-handle.png');
           size: contain;
         };
+        &:focus {
+          outline: none;
+        }
       }
     }
     .slider-ticks {
@@ -138,8 +164,16 @@ ul.devices {
     font-size: 82px;
     letter-spacing: -5px;
   }
+  .vertical-rule {
+    float: left;
+    height: 110px;
+    margin-top: 20px;
+  }
 }
 
+$screen-xs-min: 420px;
+$screen-sm-min: 420px;
+$screen-md-min: 720px;
 
 // ** Store Locator
 .store-locator {
@@ -154,12 +188,44 @@ padding: 3rem 0;
   }
   #store-list {
   text-align: left;
-    ul {
+   ul {
     list-style-type: none;
     font-size: 14px;
-      .store-name { color: $darkblue; }
-      .store-address { color: $mediumgray; }
-      .get-directions { color: $darkblue; }
+      @media (max-width: $screen-xs-min) {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      }
+      .store-name { 
+        color: $mediumblue; 
+        padding-bottom: 13px;
+      }
+      .store-address { 
+        color: $mediumgray; 
+        line-height: 17px;
+      }
+      .get-directions { 
+        color: $mediumblue; 
+        padding: 13px 0;
+      }
+      @media (min-width: $screen-sm-min) {
+        li {
+        margin-top: 2rem;
+        padding-top: 2rem;
+        width: 17%;
+        float: left;
+        padding: 1rem 1rem 0 1rem;
+        border-left: 1px solid $darkgray;
+        }
+        li:first-child {
+        border-left: none;
+        margin-left: -2rem;
+        }
+      }
+      @media (min-width: $screen-md-min) {
+        li {
+        padding: 1rem 0 0 2rem;
+        }
+      }
     }
   }
 }

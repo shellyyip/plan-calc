@@ -29,7 +29,8 @@
 					</div>
 					<p>Basic Phone ($20)</p>
 					<div class="num-spinner">
-						<button class="spinner-minus"> - </button>
+						<button class="spinner-minus"> &ndash; </button>
+						<span class="vertical-rule"></span>
 						<button class="spinner-plus"> + </button>
 					</div>
 				</li>
@@ -40,7 +41,8 @@
 					</div>
 					<p>Hotspot ($20)</p>
 					<div class="num-spinner">
-						<button class="spinner-minus"> - </button>
+						<button class="spinner-minus"> &ndash; </button>
+						<span class="vertical-rule"></span>
 						<button class="spinner-plus"> + </button>
 					</div>
 				</li>
@@ -51,7 +53,8 @@
 					</div>
 					<p>Smartphone ($10)</p>
 					<div class="num-spinner">
-						<button class="spinner-minus"> - </button>
+						<button class="spinner-minus"> &ndash; </button>
+						<span class="vertical-rule"></span>
 						<button class="spinner-plus"> + </button>
 					</div>
 				</li>
@@ -62,7 +65,8 @@
 					</div>
 					<p>Tablet ($10)</p>
 					<div class="num-spinner">
-						<button class="spinner-minus"> - </button>
+						<button class="spinner-minus"> &ndash; </button>
+						<span class="vertical-rule"></span>
 						<button class="spinner-plus"> + </button>
 					</div>
 				</li>
@@ -94,6 +98,7 @@
 					<h1 class="lightgraytext">&mdash; & &mdash;</h1>
 					<h1><span class="total-gbs"></span> GB</h1>
 				</div>
+				<span class="vertical-rule"></span>
 				<div class="cost-per-month centered">
 					<div>
 						<h2>Your cost per month</h2>
