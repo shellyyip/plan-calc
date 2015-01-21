@@ -121,7 +121,10 @@
 						<button id="zip-submit" class="button redbg whitetext" type="submit">Find A Store</button>
 					</fieldset>
 				</form>
-				<p id="form-errors"></p>
+				<p id="form-errors">
+					<img src="images/icon-noteligible.png">
+					We're sorry; it appears that you are not eligible for this offer.
+				</p>
 			</div>
 
 			<div id="store-list">

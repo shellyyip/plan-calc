@@ -122,8 +122,7 @@ var updateAll = function() {// Run all functions
 }
 
 var noStores = function() {
-  $(".store-locator").hide();
-  $('#form-errors').text("We're sorry, there are no stores in your area.");
+  $('#form-errors').show();
 }
 
 var success = function(stores) {
