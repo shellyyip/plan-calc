@@ -29,7 +29,7 @@
 			</div>
 
 			<ul class="devices">
-				<li data-device="basic-phone" data-costPer="20" data-num="0">
+				<li data-device="basic-phone" data-costper="20" data-num="0">
 					<div class="device-img">
 						<img src="images/device-basicphone.png"/>
 						<div class="quantity"></div>
@@ -41,7 +41,7 @@
 						<button class="spinner-plus"> + </button>
 					</div>
 				</li>
-				<li data-device="hotspot" data-costPer="20" data-num="0">
+				<li data-device="hotspot" data-costper="20" data-num="0">
 					<div class="device-img">
 						<img src="images/device-hotspot.png"/>
 						<div class="quantity"></div>
@@ -53,7 +53,7 @@
 						<button class="spinner-plus"> + </button>
 					</div>
 				</li>
-				<li data-device="smart-phone" data-costPer="10" data-num="1">
+				<li data-device="smart-phone" data-costper="10" data-num="1">
 					<div class="device-img">
 						<img src="images/device-smartphone.png"/>
 						<div class="quantity"></div>
@@ -65,7 +65,7 @@
 						<button class="spinner-plus"> + </button>
 					</div>
 				</li>
-				<li data-device="tablet" data-costPer="10" data-num="1">
+				<li data-device="tablet" data-costper="10" data-num="1">
 					<div class="device-img">
 						<img src="images/device-tablet.png"/>
 						<div class="quantity"></div>
