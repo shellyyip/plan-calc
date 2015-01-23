@@ -5,11 +5,18 @@ h2 {line-height: 120%;}
 button:focus {
   outline: none;
 }
+p {line-height: 17px;}
 
-$mobile-portrait: 321px;
-$mobile-landscape: 481px;
-$tablet-portrait: 768px;
+$mobile-portrait: 320px;
+$mobile-landscape: 480px;
+$tablet-portrait: 765px;
 $desktop: 850px;
+
+@media (max-width: $mobile-landscape) {
+  .invisible-on-mobile {
+    display: none;
+  }
+}
 
 .vertical-rule {
   border-right: 2px solid $lightgray;
@@ -97,6 +104,9 @@ ul.devices {
   h2 {padding-bottom: 15px;}
   .label-slider {
     font-size: 8px;
+    @media (min-width: $mobile-landscape) {
+      font-size: 15px;
+    }
   }
   .dataplan-slider-container {
     background-color: rgba(0,0,0,.05);
@@ -164,21 +174,26 @@ ul.devices {
     }
   }
   // Total $
-  .cost-per-month:before {//for vert centering
-    content: '';
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-    margin-right: -0.25em;
-  }
-  .cost-per-month {
+  .cost-per-month, .device-data-quantity {
+    &:before {//for vert centering
+      content: '';
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+      margin-right: -0.25em;
+    }
     > div {
       vertical-align: middle;
       display: inline-block;
     }
+  }
+  .cost-per-month {
     h2 {
-      @media (max-width: $mobile-landscape) {
+      @media (max-width: $mobile-portrait) {
         font-size: 12px;
+      }
+      @media (min-width: $mobile-landscape) {
+        font-size: 18px;
       }
     }
   }
@@ -205,6 +220,9 @@ text-align: center;
 background-image: url("images/bg-map.jpg");
 background-size: cover;
 padding: 3rem 0;
+  @media (max-width: $mobile-portrait) {
+    h2 {margin-bottom: 20px;}
+  }
   .white-overlay {
   background: white;/* IE8 fallback, do not remove */
   background-color: rgba(255,255,255,0.8);
@@ -214,10 +232,12 @@ padding: 3rem 0;
   text-align: left;
    ul {
     list-style-type: none;
-    font-size: 14px;
+    li {
+      padding-bottom: 20px;
+      p {font-size: 18px;}
+    }
       @media (max-width: $mobile-landscape) {
-      font-size: 1.5rem;
-      margin-top: 2rem;
+        margin-top: 2rem;
       }
       .store-name { 
         color: $mediumblue; 
@@ -231,8 +251,9 @@ padding: 3rem 0;
         color: $mediumblue; 
         padding: 13px 0;
       }
-      @media (min-width: $mobile-landscape) {
+      @media (min-width: $tablet-portrait) {
         li {
+        font-size: 12px;
         margin-top: 2rem;
         padding-top: 2rem;
         width: 17%;
@@ -243,11 +264,6 @@ padding: 3rem 0;
         li:first-child {
         border-left: none;
         margin-left: -2rem;
-        }
-      }
-      @media (min-width: $tablet-portrait) {
-        li {
-        padding: 1rem 0 0 2rem;
         }
       }
     }

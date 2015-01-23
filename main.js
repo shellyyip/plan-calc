@@ -122,44 +122,45 @@ var updateAll = function() {// Run all functions
 }
 
 var noStores = function() {
-  $('#form-errors').show();
+	$('#store-list ul').empty();
+  	$('#form-errors').show();
 }
 
 var success = function(stores) {
-  $(".store-locator").show();
-  //Clear addresses, error messages first
-  $('#store-list ul').empty();
-  $('#form-errors').empty();
-  $(stores).each(function(i) {
-    var address_1 = stores[i].address_1;
-    var address_2 = stores[i].address_2;
-    var city = stores[i].city;
-    var state = stores[i].state;
-    var zipcode = stores[i].zipcode;
-    if (stores[i].address_2.length > 0) {
-      $('#store-list ul').append('<li>'
-         +'<p class="store-name"><strong>'+stores[i].name+'</strong></p>'
-         +'<p class="store-address">'+address_1+'</br>'
-         +address_2+'</br>'
-         +city+', '
-         +state+' '
-         +zipcode+'</br>'
-         +'<p class="get-directions"><strong><a target="_blank" href="https://www.google.com/maps/dir//'+address_1+'+'+address_2+',+'+city+',+'+state+'+'+zipcode+'">Get Directions >></a></strong></p>'
-         +'</li>'); 
-    } else {
-      $('#store-list ul').append('<li>'
-         +'<p class="store-name"><strong>'+stores[i].name+'</strong></p>'
-         +'<p class="store-address">'+address_1+'</br>'
-         +city+', '
-         +state+' '
-         +zipcode+'</br>'
-         +'<p class="get-directions"><strong><a target="_blank" href="https://www.google.com/maps/dir//'+address_1+'+'+address_2+',+'+city+',+'+state+'+'+zipcode+'">Get Directions >></a></strong></p>'
-         +'</li>'); 
-    }
-    // $('#store-list ul .get-directions strong a').unbind('click').on('click',function() {
-    //   ga('send', 'event', 'Get Directions Link Click BH6 Results', 'Click', 'Get Store Directions - BH6');
-    // });
-  });
+	$('#form-errors').hide();
+	$(".store-locator").show();
+	//Clear addresses, error messages first
+	$('#store-list ul').empty();
+	$(stores).each(function(i) {
+	var address_1 = stores[i].address_1;
+	var address_2 = stores[i].address_2;
+	var city = stores[i].city;
+	var state = stores[i].state;
+	var zipcode = stores[i].zipcode;
+	if (stores[i].address_2.length > 0) {
+	  $('#store-list ul').append('<li>'
+	     +'<p class="store-name"><strong>'+stores[i].name+'</strong></p>'
+	     +'<p class="store-address">'+address_1+'</br>'
+	     +address_2+'</br>'
+	     +city+', '
+	     +state+' '
+	     +zipcode+'</br>'
+	     +'<p class="get-directions"><strong><a target="_blank" href="https://www.google.com/maps/dir//'+address_1+'+'+address_2+',+'+city+',+'+state+'+'+zipcode+'">Get Directions >></a></strong></p>'
+	     +'</li>'); 
+	} else {
+	  $('#store-list ul').append('<li>'
+	     +'<p class="store-name"><strong>'+stores[i].name+'</strong></p>'
+	     +'<p class="store-address">'+address_1+'</br>'
+	     +city+', '
+	     +state+' '
+	     +zipcode+'</br>'
+	     +'<p class="get-directions"><strong><a target="_blank" href="https://www.google.com/maps/dir//'+address_1+'+'+address_2+',+'+city+',+'+state+'+'+zipcode+'">Get Directions >></a></strong></p>'
+	     +'</li>'); 
+	}
+	// $('#store-list ul .get-directions strong a').unbind('click').on('click',function() {
+	//   ga('send', 'event', 'Get Directions Link Click BH6 Results', 'Click', 'Get Store Directions - BH6');
+	// });
+	});
 };
 
 // **** Events 

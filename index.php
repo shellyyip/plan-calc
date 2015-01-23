@@ -1,5 +1,6 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 </head>
 <body>
 <link href="style.css" rel="stylesheet">
@@ -10,10 +11,12 @@
 		<div class="module-header">
 			<h1>
 				<span class="mediumbluetext">Our best plan ever, </span>
-				<br><span class="darkbluetext">custom fit for you.</span>
+				<br>
+				<span class="darkbluetext">custom fit for you.</span>
 			</h1>
 			<h2 class="darkbluetext">
-				Add between two and ten devices, choose your data amount, <br>
+				Add between two and ten devices, choose your data amount, 
+				<span class="invisible-on-mobile"><br></span>
 				then stop by one of our stores to sign up.
 			</h2>
 		</div>
@@ -98,9 +101,11 @@
 
 			<div class="totals">
 				<div class="device-data-quantity centered darkbluetext">
-					<h1 class=""><span class="total-devices"></span> Devices</h1>
-					<h1 class="lightgraytext">&mdash; & &mdash;</h1>
-					<h1><span class="total-gbs"></span> GB</h1>
+					<div>
+						<h1 class=""><span class="total-devices"></span> Devices</h1>
+						<h1 class="lightgraytext">&mdash; & &mdash;</h1>
+						<h1><span class="total-gbs"></span> GB</h1>
+					</div>
 				</div>
 				<span class="vertical-rule"></span>
 				<div class="cost-per-month centered">
@@ -141,7 +146,7 @@
 
 	<footer class="module">
 		<p class="mediumgraytext text-left verdana">
-			Things we want you to know: New line of service with new Retail Installment Contracts and Shared Connect Plan required. Credit approval required. Regulatory Cost Recovery Fee applies (currently $1.82/line/month); this is not a tax or gvmt. required charge. Add. fees, taxes and terms apply and vary by svc. and eqmt. Offers valid in-store at participating locations only, may be fulfilled through direct fulfillment and cannot be combined. See store or uscellular.com for details. Disney Big Hero 6 Free Ticket Offer: Qualifying consumers will receive a reward code valid for one movie ticket good towards two admissions (up to $26 value total) to see Big Hero 6 at participating theaters. To qualify, the customer must register for the promotion at <a href="http://www.bighero6tix.com" target="_blank">www.bighero6tix.com</a> and provide their first and last name, U.S. Cellular account number along with a valid email address. Redemption code will be sent to that email in 3-5 business days. Promotion void if not activated by 12/31/2014 Limit 1 offer per account. Not for resale; void if sold or exchanged. Offer is good while supplies last. Retail Installment Contracts: Retail Installment Contract (Contract) and monthly payments according to the Payment Schedule in the Contract required. If you are in default or terminate your Contract, we may require you to immediately pay the entire unpaid Amount Financed as well as our collection costs, attorneys' fees and court costs related to enforcing your obligations under the Contract. Kansas Customers: In areas in which U.S. Cellular receives support from the Federal Universal Service Fund, all reasonable requests for service must be met. Unresolved questions concerning services availability can be directed to the Kansas Corporation Commission Office of Public Affairs and Consumer Protection at 1-800-662-0027. Limited-time offer. Trademarks and trade names are the property of their respective owners. Additional terms apply. See store or uscellular.com for details. &copy;2014 U.S. Cellular
+			<strong>Things we want you to know:</strong> New Retail Installment Contracts, Shared Connect Plan and $25 device act. fee required. Credit approval required. Regulatory Cost Recovery Fee applies (currently $1.82/line/month); this is not a tax or gvmt. required charge. Add. fees, taxes and terms apply and vary by svc. and eqmt. Offers valid in-store at participating locations only, may be fulfilled through direct fulfillment and cannot be combined. See store or uscellular.com for details. <strong>$130 Price Plan</strong> based on $90/mo., 10GB Shared Connect Plan plus 4 lines with discounted $10 Device Connection Charges each. Retail Installment Contract required to receive discounts; otherwise, regular Device Connection Charges apply. Other discounts available for additional Shared Connect Plans. Limited-time offer. <strong>Contract Payoff Promo:</strong> Offer valid on up to 6 consumer lines or 25 business lines. Must port in current number to U.S. Cellular and purchase new Smartphone or tablet through a Retail Installment Contract on a Shared Connect Plan with Device Protection+. Enrollment in Device Protection+ required in all markets except North Carolina. The monthly charge for Device Protection+ is $8.99 for Smartphones. A deductible per approved claim applies. Federal Warranty Service Corporation is the Provider of the Device Protection+ ESC benefits, except in CA and OK. Submit final bill identifying early termination fee (ETF) charged by carrier within 60 days of activation date to <a href="http://www.uscellular.com/contractpayoff" target="_blank">www.uscellular.com/contractpayoff</a> or via mail to U.S. Cellular® Contract Payoff Program 5591-61; PO Box 752257; El Paso, TX 88575-2257. Customer will be reimbursed for the ETF reflected on final bill up to $350/line. Reimbursement in form of a U.S. Cellular Prepaid Card is issued by MetaBank,® Member FDIC; additional offers are not sponsored or endorsed by MetaBank. This card does not have cash access and can be used at any merchant location that accepts MasterCard® Debit Cards within the U.S. only. Card valid through expiration date shown on front of card. Allow 12–14 weeks for processing. To be eligible, customer must register for My Account. <strong>Retail Installment Contract:</strong> Retail Installment Contract (Contract) and monthly payments according to the Payment Schedule in the Contract required. If you are in default or terminate your Contract, we may require you to immediately pay the entire unpaid Amount Financed as well as our collection costs, attorneys’ fees and court costs related to enforcing your obligations under the Contract. Upgrade your handset after 12 consecutive payments made on the Contract. <strong>Kansas Customers:</strong> In areas in which U.S. Cellular receives support from the Federal Universal Service Fund, all reasonable requests for service must be met. Unresolved questions concerning services availability can be directed to the Kansas Corporation Commission Office of Public Affairs and Consumer Protection at 1-800-662-0027. Limited-time offer. Trademarks and trade names are the property of their respective owners. Additional terms apply. See store or uscellular.com for details. &copy;2015 U.S. Cellular
 		</p>
 	</footer>
 <!--[if IE]>
