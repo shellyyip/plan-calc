@@ -82,7 +82,7 @@
 			<div class="dataplans">
 				<h2 class="centered">Choose your shared data.</h2>
 				<input type="text" id="dataplan" readonly hidden>
-				<h2 class="inlineblock label-slider">10&#8203;GB</h2>
+				<h2 class="inlineblock label-slider">10GB</h2>
 				<div class="dataplan-slider-container">
 					<div id="dataplan-slider"></div>
 					<div class="slider-ticks">
@@ -95,7 +95,7 @@
 						<span class="justify-break"></span>
 					</div>
 				</div>
-				<h2 class="inlineblock label-slider">20&#8203;GB</h2>
+				<h2 class="inlineblock label-slider">20GB</h2>
 				<div class="justify-break"></div>
 			</div>
 
