@@ -27,6 +27,7 @@ $desktop: 850px;
 }
 
 .main-plan {
+  margin-top: -10px;
   h1 {font-size: 50px;}
   h2 {font-size: 18px;}
   padding: 20px;
@@ -236,38 +237,41 @@ padding: 3rem 0;
     list-style-type: none;
     li {
       padding-bottom: 20px;
-      p {font-size: 18px;}
+      p {
+        font-size: 18px;
+        @media (min-width: $tablet-portrait) {
+          font-size: 14px;
+        }
+      }
     }
-      @media (max-width: $mobile-landscape) {
-        margin-top: 2rem;
+    @media (max-width: $mobile-landscape) {
+      margin-top: 2rem;
+    }
+    .store-name { 
+      color: $mediumblue; 
+      padding-bottom: 13px;
+    }
+    .store-address { 
+      color: $mediumgray; 
+      line-height: 17px;
+    }
+    .get-directions { 
+      color: $mediumblue; 
+      padding: 13px 0;
+    }
+    @media (min-width: $tablet-portrait) {
+      li {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      width: 16%;
+      float: left;
+      padding: 1rem 1rem 0 1rem;
+      border-left: 1px solid $darkgray;
       }
-      .store-name { 
-        color: $mediumblue; 
-        padding-bottom: 13px;
+      li:first-child {
+      border-left: none;
       }
-      .store-address { 
-        color: $mediumgray; 
-        line-height: 17px;
-      }
-      .get-directions { 
-        color: $mediumblue; 
-        padding: 13px 0;
-      }
-      @media (min-width: $tablet-portrait) {
-        li {
-        font-size: 12px;
-        margin-top: 2rem;
-        padding-top: 2rem;
-        width: 17%;
-        float: left;
-        padding: 1rem 1rem 0 1rem;
-        border-left: 1px solid $darkgray;
-        }
-        li:first-child {
-        border-left: none;
-        margin-left: -2rem;
-        }
-      }
+    }
     }
   }
 }
