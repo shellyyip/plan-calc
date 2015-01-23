@@ -107,6 +107,9 @@ ul.devices {
     @media (min-width: $mobile-landscape) {
       font-size: 15px;
     }
+    @media (min-width: $desktop) {
+      font-size: 18px;
+    }
   }
   .dataplan-slider-container {
     background-color: rgba(0,0,0,.05);
@@ -121,7 +124,6 @@ ul.devices {
     #dataplan-slider, .slider-ticks {
       left: 50%;
       margin-left: -47%;//half of width
-      
     }
     #dataplan-slider {
       top: 14px;
