@@ -84,7 +84,6 @@
 				<input type="text" id="dataplan" readonly hidden>
 				<h2 class="inlineblock label-slider">10GB</h2>
 				<div class="dataplan-slider-container">
-					<div id="dataplan-slider"></div>
 					<div class="slider-ticks">
 						<span>&bull;</span> 
 						<span>&bull;</span> 
@@ -94,6 +93,7 @@
 						<span>&bull;</span> 
 						<span class="justify-break"></span>
 					</div>
+					<div id="dataplan-slider"></div>
 				</div>
 				<h2 class="inlineblock label-slider">20GB</h2>
 				<div class="justify-break"></div>

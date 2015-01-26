@@ -127,11 +127,12 @@ ul.devices {
       margin-left: -47%;//half of width
     }
     #dataplan-slider {
-      top: 14px;
+      height: 100%;
       width: 93%;
       border: none;//reset
       background: none;//reset
       .ui-slider-handle {
+        top: 9px;
         border: none;
         background: none; //override jquery ui's background
         height: 30px;
