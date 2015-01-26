@@ -1,5 +1,10 @@
 // Specific - P1B Connections
 #page-wrapper {margin: -10px;}
+.dirtyskybluebg{background: {
+    image: url('images/bg.jpg');
+    size: cover;
+  };
+}
 body {color: #666;}
 h2 {line-height: 120%;}
 button:focus {
