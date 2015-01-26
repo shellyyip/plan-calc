@@ -84,6 +84,7 @@ ul.devices {
 }
 
 .spinner-minus, .spinner-plus {
+  cursor: pointer;
   border: none;
   background: none;
   font-size: 40px;
@@ -127,11 +128,13 @@ ul.devices {
       margin-left: -47%;//half of width
     }
     #dataplan-slider {
+      cursor: pointer;
       height: 100%;
       width: 93%;
       border: none;//reset
       background: none;//reset
       .ui-slider-handle {
+        cursor: pointer;
         top: 9px;
         border: none;
         background: none; //override jquery ui's background
@@ -147,6 +150,8 @@ ul.devices {
       }
     }
     .slider-ticks {
+      pointer-events: none;
+      cursor: pointer;
       top: 9px;
       width: 94%;//needs to be slightly wider than slider to account for slight drift in tick/handle alignment
       position: absolute;

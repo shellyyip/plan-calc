@@ -163,56 +163,60 @@ var success = function(stores) {
 	});
 };
 
-// **** Events 
-$plus.on('click', function() {
-	var device = $(this).parents('[data-device]').data('device');
-	var obj = $.grep(allDevices, function(e){ 
-		return e.device == device; 
+// **** Init
+$(document).ready(function(){
+	// **** Events 
+	$plus.on('click', function() {
+		var device = $(this).parents('[data-device]').data('device');
+		var obj = $.grep(allDevices, function(e){ 
+			return e.device == device; 
+		});
+		obj[0]['num']+=1;
+		updateAll();
 	});
-	obj[0]['num']+=1;
-	updateAll();
-});
-$minus.on('click', function() {
-	var device = $(this).parents('[data-device]').data('device');
-	var obj = $.grep(allDevices, function(e){ 
-		return e.device == device; 
+	$minus.on('click', function() {
+		var device = $(this).parents('[data-device]').data('device');
+		var obj = $.grep(allDevices, function(e){ 
+			return e.device == device; 
+		});
+		obj[0]['num']-=1;
+		updateAll();
 	});
-	obj[0]['num']-=1;
-	updateAll();
-});
-$("#zip-submit").on('click', function(e) {
-	e.preventDefault();
-	$.ajax({
-		url: 'https://www.uscellularetf.com/api/store',
-		type: 'GET',
-		data: 'zipcode='+$("#zipcode").val(),
-		success: function(data) { 
-		  //var data = window.JSON.parse(data);
-		  if(data.stores == false) {
-		    noStores();
-		  } else {
-		    success(data.stores);
-		  }
+	$("#zip-submit").on('click', function(e) {
+		e.preventDefault();
+		$.ajax({
+			url: 'https://www.uscellularetf.com/api/store',
+			type: 'GET',
+			data: 'zipcode='+$("#zipcode").val(),
+			success: function(data) { 
+			  //var data = window.JSON.parse(data);
+			  if(data.stores == false) {
+			    noStores();
+			  } else {
+			    success(data.stores);
+			  }
+			}
+		});
+	});
+	$('#dataplan-slider').slider({
+		value: 10,
+		min: 10,
+		max: 20,
+		step: 2,
+		slide: function( event, ui ) {
+			$( "#dataplan" ).val( ui.value );
+			$('.total-gbs').text(ui.value);
+			calcCost();
+			debugReceipt();
 		}
 	});
+	var sliderVal = $( "#dataplan-slider" ).slider( "value" );
+
+	$( "#dataplan" ).val( sliderVal );
+	$('.total-gbs').text( sliderVal );
+
+	//IE pointer-events:none; polyfill
+	PointerEventsPolyfill.initialize({});
+	//Calculator 
+	updateAll();
 });
-
-$('#dataplan-slider').slider({
-	value: 10,
-	min: 10,
-	max: 20,
-	step: 2,
-	slide: function( event, ui ) {
-		$( "#dataplan" ).val( ui.value );
-		$('.total-gbs').text(ui.value);
-		calcCost();
-		debugReceipt();
-	}
-});
-var sliderVal = $( "#dataplan-slider" ).slider( "value" );
-$( "#dataplan" ).val( sliderVal );
-$('.total-gbs').text( sliderVal );
-
-
-// **** Init
-updateAll();
