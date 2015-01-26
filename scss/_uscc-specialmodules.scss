@@ -1,5 +1,5 @@
 // Specific - P1B Connections
-
+#page-wrapper {margin: -10px;}
 body {color: #666;}
 h2 {line-height: 120%;}
 button:focus {
@@ -287,6 +287,7 @@ font-size: 16px;
     height: 33px;
     font-size: 14px;
     width: 150px;
+    padding-left: 10px;
   }
   label {
     font-size: 14px;
