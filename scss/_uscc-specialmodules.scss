@@ -202,10 +202,11 @@ ul.devices {
   }
   .cost-per-month {
     h2 {
-      @media (max-width: $mobile-portrait) {
+      @media (max-width: $mobile-landscape) {
         font-size: 12px;
+        padding-bottom: 8px;
       }
-      @media (min-width: $mobile-landscape) {
+      @media (min-width: $tablet-portrait) {
         font-size: 18px;
       }
     }
