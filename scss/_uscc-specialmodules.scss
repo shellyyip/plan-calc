@@ -75,6 +75,17 @@ ul.devices {
       width: 20px;
       line-height: 20px;//must equal height for vert aligning the number
     }
+    .pop-in {
+      -webkit-animation:pop-in 0.1s;
+      -moz-animation:pop-in 0.1s;
+      -ms-animation:pop-in 0.1s;
+    }
+    .pop-out {
+      -webkit-animation:popout 0.1s;
+      -moz-animation:popout 0.1s;
+      -ms-animation:popout 0.1s;
+      animation-fill-mode: forwards;
+    }
   }
   [data-device=basic-phone] .quantity {
     top: 58px;

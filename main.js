@@ -39,10 +39,12 @@ var toggleQuantity = function() {// Checks if device quantity is 0 and makes the
 	$deviceList.each(function() {
 		var $this = $(this);
 		var num = $this.data('num');
-		if (num == 0) {
-			$this.find('.quantity').hide();
+		if (num == 0) {	
+			//hide
+			$this.find('.quantity').removeClass('pop-in').addClass('pop-out');
 		} else {
-			$this.find('.quantity').show();
+			//show
+			$this.find('.quantity').addClass('pop-in').removeClass('pop-out');
 		}
 	});
 }
@@ -52,7 +54,12 @@ var updateDeviceNum = function() {// Count devices
 		var $this = $(this);
 		var num = $this.data('num');
 		//Print quantities next to each device
-		$this.find('.quantity').text(num);
+		if (num == 0) {
+			//minimum one to avoid '0' flashing in pop-out animation
+			$this.find('.quantity').text('1');
+		} else {
+			$this.find('.quantity').text(num);
+		}
 		//Calc total quantity
 		total+=num;
 	});
@@ -161,10 +168,6 @@ var success = function(stores) {
 	// });
 	});
 };
-
-var gaEvents = function() {
-
-}
 
 // **** Init
 $(document).ready(function(){
