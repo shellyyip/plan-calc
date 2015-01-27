@@ -118,7 +118,6 @@ var updateAll = function() {// Run all functions
 	updateDeviceNum();
 	toggleQuantity();
 	calcCost();
-	debugReceipt();
 }
 
 var noStores = function() {
@@ -163,6 +162,10 @@ var success = function(stores) {
 	});
 };
 
+var gaEvents = function() {
+
+}
+
 // **** Init
 $(document).ready(function(){
 	// **** Events 
@@ -173,6 +176,21 @@ $(document).ready(function(){
 		});
 		obj[0]['num']+=1;
 		updateAll();
+		//GA Tracking
+		switch(device) {
+		    case 'basic-phone':
+		        ga('send', 'event', 'Add device', 'Button Click', 'Add Basic Phone');
+		        break;
+		    case 'smart-phone':
+		        ga('send', 'event', 'Add device', 'Button Click', 'Add Smartphone');
+		        break;
+		    case 'hotspot':
+		        ga('send', 'event', 'Add device', 'Button Click', 'Add Hotspot');
+		        break;
+		    case 'tablet':
+		        ga('send', 'event', 'Add device', 'Button Click', 'Add Tablet');
+		        break;
+		}
 	});
 	$minus.on('click', function() {
 		var device = $(this).parents('[data-device]').data('device');
@@ -181,6 +199,21 @@ $(document).ready(function(){
 		});
 		obj[0]['num']-=1;
 		updateAll();
+		//GA Tracking
+		switch(device) {
+		    case 'basic-phone':
+		        ga('send', 'event', 'Remove device', 'Button Click', 'Remove Basic Phone');
+		        break;
+		    case 'smart-phone':
+		        ga('send', 'event', 'Remove device', 'Button Click', 'Remove Smartphone');
+		        break;
+		    case 'hotspot':
+		        ga('send', 'event', 'Remove device', 'Button Click', 'Remove Hotspot');
+		        break;
+		    case 'tablet':
+		        ga('send', 'event', 'Remove device', 'Button Click', 'Remove Tablet');
+		        break;
+		}
 	});
 	$("#zip-submit").on('click', function(e) {
 		e.preventDefault();
@@ -189,7 +222,6 @@ $(document).ready(function(){
 			type: 'GET',
 			data: 'zipcode='+$("#zipcode").val(),
 			success: function(data) { 
-			  //var data = window.JSON.parse(data);
 			  if(data.stores == false) {
 			    noStores();
 			  } else {
@@ -207,7 +239,8 @@ $(document).ready(function(){
 			$( "#dataplan" ).val( ui.value );
 			$('.total-gbs').text(ui.value);
 			calcCost();
-			debugReceipt();
+			//GA Tracking
+			ga('send', 'event', 'Choose Data', 'Button Click', 'Change GB');
 		}
 	});
 	var sliderVal = $( "#dataplan-slider" ).slider( "value" );

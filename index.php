@@ -1,6 +1,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<script src="lib/js/usc-ga.js"></script>
 </head>
 <body>
 <link href="style.css" rel="stylesheet">
