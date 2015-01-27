@@ -5,6 +5,17 @@
 </head>
 <body>
 <link href="style.css" rel="stylesheet">
+<!--[if IE 9]>
+	<style>
+	/* Fallback for IE9 non-support for CSS3 animations */
+     .pop-in {
+      visibility: auto;
+    }
+    .pop-out {
+      visibility: hidden;
+    }
+    </style>
+<![endif]-->
 
 <div id="page-wrapper" class="whitebg">
 
