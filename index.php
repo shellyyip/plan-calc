@@ -116,7 +116,14 @@
 					<div>
 						<h1 class=""><span class="total-devices"></span> Devices</h1>
 						<h1 class="lightgraytext">&mdash; & &mdash;</h1>
-						<h1><span class="total-gbs"></span> GB</h1>
+						<h1 class="total-gbs flip-container">
+							<div class="old"></div> 
+							<div class="new">
+								<div class="front"></div>
+								<div class="back"></div>
+							</div> 
+							GB
+						</h1>
 					</div>
 				</div>
 				<span class="vertical-rule"></span>
@@ -166,5 +173,7 @@
 <script src="lib/js/jquery-ui.min.js"></script>
 <script src="lib/js/jquery.ui.touch-punch.min.js"></script>
 <script src="lib/js/pointer_events_polyfill.js"></script>
+<script src="lib/js/flip.min.js"></script>
+<script src="digit-flipper.js"></script>
 <script src="main.js"></script>
 </body>
