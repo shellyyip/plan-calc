@@ -36,13 +36,15 @@ var flipThis = function(el) {
 	//Trigger Flip
 	el.flip(true);
 	//Destroy Flip when transition ends
-	el.one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',   
-    function(e) {
-    	el.unwrap();
-    	el.removeAttr('style');
-    	el.find('.front').remove();
-    	el.find('.back').children().unwrap();
-    });
+	//el.one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',   
+	setTimeout(//need timeout instead of using ontranstionend because if user changes the number too fast, the end event can never fire
+	    function(e) {
+	    	el.unwrap();
+	    	el.removeAttr('style');
+	    	el.find('.front').remove();
+	    	el.find('.back').children().unwrap();
+	    }
+	, 500);//set timeout equal to speed of flip
 }
 
 //Put it all together

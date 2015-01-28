@@ -40,12 +40,15 @@
 .flip {
 	display: inline-block;
 }
-// .flip-container {
-// 	position: relative;
-// 	.old, .new {
-// 		position: absolute;
-// 	}
-// 	.old {//starts invisible
-// 		//visibility: hidden;
-// 	}
-// }
+.old, .new, .back, .front {
+	@extend .dirtyskybluebg;
+}
+.flip-container {
+	position: relative;
+	.old, .new {
+		position: absolute;
+	}
+	.old {//starts invisible
+		//visibility: hidden;
+	}
+}
