@@ -37,13 +37,15 @@
 }
 
 //Digit Flipper styles
-.flip-container {
-	position: relative;
-	perspective: 1000;
-	.old, .new {
-		position: absolute;
-	}
-	.old {//starts invisible
-		visibility: hidden;
-	}
+.flip {
+	display: inline-block;
 }
+// .flip-container {
+// 	position: relative;
+// 	.old, .new {
+// 		position: absolute;
+// 	}
+// 	.old {//starts invisible
+// 		//visibility: hidden;
+// 	}
+// }

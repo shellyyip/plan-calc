@@ -114,14 +114,11 @@
 			<div class="totals">
 				<div class="device-data-quantity centered darkbluetext">
 					<div>
-						<h1 class=""><span class="total-devices"></span> Devices</h1>
+						<h1><span class="total-devices"></span> Devices</h1>
 						<h1 class="lightgraytext">&mdash; & &mdash;</h1>
 						<h1 class="total-gbs flip-container">
 							<div class="old"></div> 
-							<div class="new">
-								<div class="front"></div>
-								<div class="back"></div>
-							</div> 
+							<div class="new"></div> 
 							GB
 						</h1>
 					</div>

@@ -241,7 +241,7 @@ $(document).ready(function(){
 		slide: function( event, ui ) {
 			var parent = $('.total-gbs');
 			$( "#dataplan" ).val( ui.value );
-			flipDigits(ui.value, parent);
+			flipDigits( ui.value, parent );
 			calcCost();
 			//GA Tracking
 			ga('send', 'event', 'Choose Data', 'Button Click', 'Change GB');
@@ -251,7 +251,7 @@ $(document).ready(function(){
 	//Seed initial slider values
 	var sliderVal = $( "#dataplan-slider" ).slider( "value" );
 	$( "#dataplan" ).val( sliderVal );
-	printSeparateDigits( sliderVal, $('.total-gbs').find('.new') );
+	printSeparateDigits( sliderVal, $('.total-gbs').find('.old') );
 
 	//IE pointer-events:none; polyfill
 	PointerEventsPolyfill.initialize({});

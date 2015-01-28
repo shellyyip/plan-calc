@@ -14,16 +14,40 @@ var printSeparateDigits = function(num, parentElem) {
 }
 
 //Moves contents of New element into Old element
-var flipNewToOld = function(parentElem) {
+var moveNewToOld = function(parentElem) {
 	var oldEl = parentElem.find('.old');
 	var newEl = parentElem.find('.new');
 	oldEl.empty();
 	newEl.children().appendTo(oldEl);
 }
 
+//Call Flip
+var flipThis = function(el) {
+	var elContent = el.children()
+	el.empty();
+	//Create front and back element, Leave front element empty, fill back element with content of el
+	el.append('<span class="front"></span><span class="back"></span>').find('.back').append(elContent);
+	//Init Flip plugin
+	el.flip({
+		axis: 'x',
+		trigger: 'manual',
+		speed: 500
+	});
+	//Trigger Flip
+	el.flip(true);
+	//Destroy Flip when transition ends
+	el.one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',   
+    function(e) {
+    	el.unwrap();
+    	el.removeAttr('style');
+    	el.find('.front').remove();
+    	el.find('.back').children().unwrap();
+    });
+}
+
 //Put it all together
 var flipDigits = function(num, parentElem) {
-	flipNewToOld(parentElem);
-	printSeparateDigits( num, parentElem.find('.new .back') );//new num
-	parentElem.find('new').flip(); 
+	moveNewToOld(parentElem);
+	printSeparateDigits( num, parentElem.find('.new') );//new num
+	flipThis( parentElem.find('.new') );
 }
