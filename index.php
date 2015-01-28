@@ -114,7 +114,7 @@
 			<div class="totals">
 				<div class="device-data-quantity centered darkbluetext">
 					<div>
-						<h1 class="total-devices">
+						<h1 class="total-devices flip-wrap">
 							<div class="old"></div> 
 							<div class="new"></div> 
 						</h1> 

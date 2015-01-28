@@ -23,6 +23,9 @@ var moveNewToOld = function(parentElem) {
 
 //Call Flip
 var flipThis = function(el) {
+	//Give element explicit height so transform-origin can calculate properly
+	el.css( 'height', el.height() );
+
 	var elContent = el.text();
 	el.empty();
 	//Create front and back element, Leave front element empty, fill back element with content of el
@@ -36,15 +39,15 @@ var flipThis = function(el) {
 	//Trigger Flip
 	el.flip(true);
 	//Destroy Flip when transition ends
-	setTimeout(//need timeout instead of using ontranstionend because if user changes the number too fast, the end event can never fire
-	    function(e) {
-	    	el.unwrap();
-	    	el.removeAttr('style');
-	    	el.find('.front').remove();
-	    	el.text( el.find('.back').text() );
-	    	el.find('.back').empty();
-	    }
-	, 500);//set timeout equal to speed of flip
+	// setTimeout(//need timeout instead of using ontranstionend because if user changes the number too fast, the end event can never fire
+	//     function(e) {
+	//     	el.unwrap();
+	//     	el.removeAttr('style');
+	//     	el.find('.front').remove();
+	//     	el.text( el.find('.back').text() );
+	//     	el.find('.back').empty();
+	//     }
+	// , 500);//set timeout equal to speed of flip
 }
 
 //Find digit element to flip. Pass in two elements with child elems, find child elems that differ, then call flip on them

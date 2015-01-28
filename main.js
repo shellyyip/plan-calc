@@ -78,7 +78,6 @@ var updateDeviceNum = function() {// Count devices
 	// ** Update & print total
 	totalPlan.totalDeviceNum = total;
 	flipDigits( totalPlan.totalDeviceNum, $('.total-devices') );
-	//$('.total-devices').text(totalPlan.totalDeviceNum);
 }
 var calcCost = function() {// Calculate package cost
 	// ** Sum up devices
