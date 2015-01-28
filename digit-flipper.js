@@ -8,7 +8,7 @@ var printSeparateDigits = function(num, parentElem) {
 	parentElem.empty();
 	for (var i=0;i<num.length;i++) {
 	 	parentElem.append(
-	 		'<span>'+num[i]+'</span>'
+	 		'<span class="digit">'+num[i]+'</span>'
 	 	);
 	}
 }
@@ -23,10 +23,10 @@ var moveNewToOld = function(parentElem) {
 
 //Call Flip
 var flipThis = function(el) {
-	var elContent = el.children()
+	var elContent = el.text();
 	el.empty();
 	//Create front and back element, Leave front element empty, fill back element with content of el
-	el.append('<span class="front"></span><span class="back"></span>').find('.back').append(elContent);
+	el.append('<div class="front"></div><div class="back">'+elContent+'</div>');
 	//Init Flip plugin
 	el.flip({
 		axis: 'x',
@@ -36,20 +36,55 @@ var flipThis = function(el) {
 	//Trigger Flip
 	el.flip(true);
 	//Destroy Flip when transition ends
-	//el.one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',   
-	setTimeout(//need timeout instead of using ontranstionend because if user changes the number too fast, the end event can never fire
-	    function(e) {
-	    	el.unwrap();
-	    	el.removeAttr('style');
-	    	el.find('.front').remove();
-	    	el.find('.back').children().unwrap();
-	    }
-	, 500);//set timeout equal to speed of flip
+	// setTimeout(//need timeout instead of using ontranstionend because if user changes the number too fast, the end event can never fire
+	//     function(e) {
+	//     	el.unwrap();
+	//     	el.removeAttr('style');
+	//     	el.find('.front').remove();
+	//     	el.find('.back').children().unwrap();
+	//     }
+	// , 500);//set timeout equal to speed of flip
+}
+
+//Find digit element to flip. Pass in two elements with spans in them, find different spans, then call flip on them
+var flipDiffDigit = function(parentElem) {
+	var oldDigits = parentElem.find('.old').children();
+	var newDigits = parentElem.find('.new').children();
+	//if old & new have different amounts of children, flip all new digits
+	if (oldDigits.length != newDigits.length) {
+		newDigits.each(function() {
+			flipThis( $(this) );
+		});
+	}
 }
 
 //Put it all together
 var flipDigits = function(num, parentElem) {
 	moveNewToOld(parentElem);
 	printSeparateDigits( num, parentElem.find('.new') );//new num
-	flipThis( parentElem.find('.new') );
+	//flipThis( parentElem.find('.new') );
+	flipDiffDigit(parentElem);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

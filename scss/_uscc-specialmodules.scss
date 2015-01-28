@@ -211,8 +211,14 @@ ul.devices {
       }
     }
   }
-  .total-devices, .total-gbs {
+  .total-devices, .total-gbs > * {
     font-size: 150%;
+  }
+  .total-gbs {
+    display: inline-block;
+  }
+  .gb-label {
+    display: inline-block;
   }
   .total-cost-container {
     font-size: 54px;

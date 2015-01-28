@@ -116,11 +116,11 @@
 					<div>
 						<h1><span class="total-devices"></span> Devices</h1>
 						<h1 class="lightgraytext">&mdash; & &mdash;</h1>
-						<h1 class="total-gbs flip-container">
+						<h1 class="total-gbs flip-wrap">
 							<div class="old"></div> 
 							<div class="new"></div> 
-							GB
 						</h1>
+						<h1 class="gb-label">GB</h1>
 					</div>
 				</div>
 				<span class="vertical-rule"></span>

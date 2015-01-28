@@ -37,18 +37,28 @@
 }
 
 //Digit Flipper styles
-.flip {
-	display: inline-block;
-}
 .old, .new, .back, .front {
 	@extend .dirtyskybluebg;
 }
-.flip-container {
-	position: relative;
-	.old, .new {
-		position: absolute;
-	}
-	.old {//starts invisible
-		//visibility: hidden;
-	}
+.digit, .flip {
+	display: inline-block;
 }
+// .flip-wrap {
+// 	position: relative;
+// 	// .flip, .new {
+// 	// 	position: absolute;
+// 	// 	top: 0;
+// 	// 	left: 0;
+// 	// }
+// 	.old {
+// 		position: absolute;
+// 		top: 0;
+// 		left: 0;
+// 	}
+// 	.flip {//flip container, has perspective attr
+// 		position: relative;
+// 		> * {//flipper, wraps front/back
+// 			transform-origin: 100% 30px;
+// 		}
+// 	}
+// }
