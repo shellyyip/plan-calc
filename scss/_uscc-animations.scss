@@ -43,6 +43,14 @@
 .digit, .flip {
 	display: inline-block;
 }
+.flip-wrap {
+	position: relative;
+}
+.new {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
 // .flip-wrap {
 // 	position: relative;
 // 	// .flip, .new {

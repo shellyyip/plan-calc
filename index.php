@@ -114,20 +114,30 @@
 			<div class="totals">
 				<div class="device-data-quantity centered darkbluetext">
 					<div>
-						<h1><span class="total-devices"></span> Devices</h1>
+						<h1 class="total-devices">
+							<div class="old"></div> 
+							<div class="new"></div> 
+						</h1> 
+						<h1 class="flip-label">Devices</h1>
 						<h1 class="lightgraytext">&mdash; & &mdash;</h1>
 						<h1 class="total-gbs flip-wrap">
 							<div class="old"></div> 
 							<div class="new"></div> 
 						</h1>
-						<h1 class="gb-label">GB</h1>
+						<h1 class="flip-label">GB</h1>
 					</div>
 				</div>
 				<span class="vertical-rule"></span>
 				<div class="cost-per-month centered">
 					<div>
 						<h2>Your cost per month</h2>
-						<h1 class="total-cost-container mediumbluetext">$<span class="total-cost"></span></h1>
+						<h1 class="total-cost-container mediumbluetext">
+							<span class="flip-label">$</span>
+							<span class="total-cost flip-wrap">
+								<span class="old"></span> 
+								<span class="new"></span> 
+							</span>
+						</h1>
 					</div>
 				</div>
 			</div>

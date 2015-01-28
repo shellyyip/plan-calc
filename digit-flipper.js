@@ -47,11 +47,11 @@ var flipThis = function(el) {
 	, 500);//set timeout equal to speed of flip
 }
 
-//Find digit element to flip. Pass in two elements with spans in them, find different spans, then call flip on them
+//Find digit element to flip. Pass in two elements with child elems, find child elems that differ, then call flip on them
 var flipDiffDigit = function(parentElem) {
 	var oldDigits = parentElem.find('.old').children();
 	var newDigits = parentElem.find('.new').children();
-	//if old & new have different amounts of children, flip all new digits
+	//if old & new have different amounts of children, flip all the digits in .new elem
 	if (oldDigits.length != newDigits.length) {
 		newDigits.each(function() {
 			flipThis( $(this) );
@@ -73,26 +73,3 @@ var flipDigits = function(num, parentElem) {
 	//flipThis( parentElem.find('.new') );
 	flipDiffDigit(parentElem);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -217,9 +217,6 @@ ul.devices {
   .total-gbs {
     display: inline-block;
   }
-  .gb-label {
-    display: inline-block;
-  }
   .total-cost-container {
     font-size: 54px;
     letter-spacing: -5px;
@@ -231,6 +228,9 @@ ul.devices {
     float: left;
     height: 110px;
     margin-top: 20px;
+  }
+   .flip-label {
+    display: inline-block;
   }
 }
 
