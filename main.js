@@ -1,7 +1,8 @@
 // p1b-digitalPlanConnections
 var totalPlan = {
 	totalDeviceNum: 0,
-	totalCost: 0
+	totalCost: 0,
+	totalGbs: 0
 };
 var $plus = $('.spinner-plus');
 var $minus = $('.spinner-minus');
@@ -110,6 +111,7 @@ var calcCost = function() {// Calculate package cost
 	var dataCost = obj[0].cost;
 	// ** Total
 	var finTotal = dataCost + deviceSubtotal;
+	totalPlan.totalCost = finTotal;
 	// Print total
 	printSeparateDigits( finTotal, $('.total-cost').find('.old') );//seed initial value
 	flipDigits( finTotal, $('.total-cost') );
@@ -143,14 +145,20 @@ var updateAll = function() {// Run all functions
 	calcCost();
 }
 
+var printPlan = function() {
+	return totalPlan.totalDeviceNum+' devices, '+totalPlan.totalGbs+' GBs, $'+totalPlan.totalCost;
+}
+
 var noStores = function() {
 	ga('send', 'event', 'Find A Store', 'Button Click', 'Invalid Zip');
+	ga('send', 'event', 'Find A Store', 'Button Click', 'Configuration Result - '+printPlan());
 	$('#store-list ul').empty();
   	$('#form-errors').show();
 }
 
 var success = function(stores) {
 	ga('send', 'event', 'Find A Store', 'Button Click', 'Valid Zip');
+	ga('send', 'event', 'Find A Store', 'Button Click', 'Configuration Result - '+printPlan());
 	$('#form-errors').hide();
 	$(".store-locator").show();
 	//Clear addresses, error messages first
@@ -259,6 +267,7 @@ $(document).ready(function(){
 		slide: function( event, ui ) {
 			var parent = $('.total-gbs');
 			$( "#dataplan" ).val( ui.value );
+			totalPlan.totalGbs = ui.value;
 			flipDigits( ui.value, parent );
 			calcCost();
 			//GA Tracking
@@ -269,6 +278,7 @@ $(document).ready(function(){
 	//Seed initial slider values
 	var sliderVal = $( "#dataplan-slider" ).slider( "value" );
 	$( "#dataplan" ).val( sliderVal );
+	totalPlan.totalGbs = sliderVal;
 	printSeparateDigits( sliderVal, $('.total-gbs').find('.old') );
 
 	//IE pointer-events:none; polyfill
