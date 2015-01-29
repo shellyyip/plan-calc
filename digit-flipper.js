@@ -29,7 +29,6 @@ var moveNewToOld = function(parentElem) {
 var flipThis = function(el) {
 	//Give element explicit height so transform-origin can calculate properly
 	el.css( 'height', el.height() );
-
 	var elContent = el.text();
 	el.empty();
 	//Create front and back element, Leave front element empty, fill back element with content of el
@@ -46,10 +45,10 @@ var flipThis = function(el) {
 	setTimeout(//need timeout instead of using ontranstionend because if user changes the number too fast, the end event can never fire
 	    function(e) {
 	    	el.unwrap();
-	    	el.removeAttr('style');
 	    	el.find('.front').remove();
 	    	el.text( el.find('.back').text() );
 	    	el.find('.back').empty();
+	    	el.removeAttr('style');
 	    }
 	, 200);//set timeout equal to speed of flip
 }
@@ -58,14 +57,7 @@ var flipThis = function(el) {
 var flipDiffDigit = function(parentElem) {
 	var oldDigits = parentElem.find('.old').children();
 	var newDigits = parentElem.find('.new').children();
-	//Give leading zeros visibility hidden
-	//Leading zeros are needed for device count because it goes from single digits to double, and leading zeros help pad out the container or otherwise the double-digit number collapses into a column
-	var $firstNewDigit = $(newDigits[0]);
-	if ($firstNewDigit.text() == 0) {
-		console.log('we have a zero!');
-		console.log($firstNewDigit[0]);
-		$firstNewDigit.css('visibility','hidden');
-	}
+
 	//Failsafe: if old & new have different amounts of children, flip all the digits in .new elem
 	if (oldDigits.length != newDigits.length) {
 		newDigits.each(function() {
@@ -78,6 +70,12 @@ var flipDiffDigit = function(parentElem) {
 				flipThis( $(newDigits[i]) );
 			}
 		}
+	}
+	//Give leading zeros visibility hidden
+	//Leading zeros needed as padding, otherwise container collapses
+	var $firstNewDigit = $(newDigits[0]);
+	if ($firstNewDigit.text() == 0) {
+		$firstNewDigit.addClass('leading-zero');
 	}
 }
 
