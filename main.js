@@ -66,7 +66,12 @@ var updateDeviceNum = function() {// Count devices
 			//minimum one to avoid '0' flashing in pop-out animation
 			$this.find('.quantity').text('1');
 		} else {
-			$this.find('.quantity').text(num);
+			//only update and animate new numbers
+			var el = $this.find('.quantity');
+			var oldNum = el.text();
+			if (oldNum != num) {
+				$this.find('.quantity').toggleClass('pop-in').text(num);
+			}
 		}
 		//Calc total quantity
 		total+=num;
