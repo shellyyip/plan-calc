@@ -37,20 +37,23 @@
 }
 
 //Digit Flipper styles
-.old, .new, .back, .front {
+.old, .new {
 	@extend .dirtyskybluebg;
 }
-.digit, .flip {
-	display: inline-block;
+.flip-label {
+  float: left;
+}
+.flip, .digit {
+  float: left;
 }
 .flip-wrap {
 	position: relative;
 }
-.new {
+.old, .new {
 	position: absolute;
 	top: 0;
 	left: 0;
 }
-.digit {
-	//height: auto;
+.new {
+  z-index: 2;
 }

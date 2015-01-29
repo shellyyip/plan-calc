@@ -131,13 +131,13 @@
 				<div class="cost-per-month centered">
 					<div>
 						<h2>Your cost per month</h2>
-						<h1 class="total-cost-container mediumbluetext">
-							<span class="flip-label">$</span>
-							<span class="total-cost flip-wrap">
-								<span class="old"></span> 
-								<span class="new"></span> 
-							</span>
-						</h1>
+						<div class="total-cost-container mediumbluetext">
+							<div class="total-cost flip-wrap">
+								<h1 class="flip-label">$</h1>
+								<h1 class="old"></h1> 
+								<h1 class="new"></h1> 
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

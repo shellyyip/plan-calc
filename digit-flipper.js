@@ -34,20 +34,20 @@ var flipThis = function(el) {
 	el.flip({
 		axis: 'x',
 		trigger: 'manual',
-		speed: 500
+		speed: 200
 	});
 	//Trigger Flip
 	el.flip(true);
 	//Destroy Flip when transition ends
-	// setTimeout(//need timeout instead of using ontranstionend because if user changes the number too fast, the end event can never fire
-	//     function(e) {
-	//     	el.unwrap();
-	//     	el.removeAttr('style');
-	//     	el.find('.front').remove();
-	//     	el.text( el.find('.back').text() );
-	//     	el.find('.back').empty();
-	//     }
-	// , 500);//set timeout equal to speed of flip
+	setTimeout(//need timeout instead of using ontranstionend because if user changes the number too fast, the end event can never fire
+	    function(e) {
+	    	el.unwrap();
+	    	el.removeAttr('style');
+	    	el.find('.front').remove();
+	    	el.text( el.find('.back').text() );
+	    	el.find('.back').empty();
+	    }
+	, 200);//set timeout equal to speed of flip
 }
 
 //Find digit element to flip. Pass in two elements with child elems, find child elems that differ, then call flip on them
