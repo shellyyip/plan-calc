@@ -4,7 +4,12 @@
     size: cover;
   };
 }
-body {color: #666;}
+body {
+  color: #666;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+}
 h2 {line-height: 120%;}
 button:focus {
   outline: none;
