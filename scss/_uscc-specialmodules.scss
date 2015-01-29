@@ -101,6 +101,9 @@ ul.devices {
   &:disabled {
     @extend .lightgraytext;
   }
+  &:active {
+    opacity: 0.8;
+  }
 }
 
 // ** Data Plan Slider
@@ -150,6 +153,9 @@ ul.devices {
         };
         &:focus {
           outline: none;
+        }
+        &:active {
+          opacity: 0.8;
         }
       }
     }
