@@ -114,17 +114,23 @@
 			<div class="totals">
 				<div class="device-data-quantity centered darkbluetext">
 					<div>
-						<h1 class="total-devices flip-wrap">
-							<div class="old"></div> 
-							<div class="new"></div> 
-						</h1> 
-						<h1 class="flip-label">Devices</h1>
+						<div class="total-devices-container">
+							<div class="total-devices flip-wrap">
+								<h1 class="old"></h1> 
+								<h1 class="new"></h1> 
+							</div> 
+							<h1 class="flip-label">Devices</h1>
+						</div>
+
 						<h1 class="lightgraytext">&mdash; & &mdash;</h1>
-						<h1 class="total-gbs flip-wrap">
-							<div class="old"></div> 
-							<div class="new"></div> 
-						</h1>
-						<h1 class="flip-label">GB</h1>
+
+						<div class="total-gbs-container">
+							<div class="total-gbs flip-wrap">
+								<h1 class="old"></h1> 
+								<h1 class="new"></h1> 
+							</div>
+							<h1 class="flip-label">GB</h1>
+						</div>
 					</div>
 				</div>
 				<span class="vertical-rule"></span>

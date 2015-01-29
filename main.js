@@ -77,6 +77,7 @@ var updateDeviceNum = function() {// Count devices
 	}
 	// ** Update & print total
 	totalPlan.totalDeviceNum = total;
+	printSeparateDigits( totalPlan.totalDeviceNum, $('.total-devices').find('.old') );//seed initial value
 	flipDigits( totalPlan.totalDeviceNum, $('.total-devices') );
 }
 var calcCost = function() {// Calculate package cost

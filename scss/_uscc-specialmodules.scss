@@ -185,9 +185,24 @@ ul.devices {
         font-size: 36px;
       }
     }
+    .total-devices-container, .total-gbs-container {
+      .flip-label {
+        float:left;
+        margin-left: 8px;
+        line-height: 45px;
+        vertical-align: bottom;
+        @media (min-width: $mobile-landscape) {
+          line-height: 61px;
+        }
+      }
+    }
+    .total-gbs-container {
+      margin-left: 12%;
+    }
   }
   // Total $
   .cost-per-month, .device-data-quantity {
+    position: relative;
     &:before {//for vert centering
       content: '';
       display: inline-block;
@@ -211,8 +226,11 @@ ul.devices {
       }
     }
   }
-  .total-devices, .total-gbs > * {
-    font-size: 150%;
+  .total-devices h1, .total-gbs h1 {
+    font-size: 35px;
+    @media (min-width: $mobile-landscape) {
+      font-size: 50px;
+    }
   }
   .total-gbs {
     display: inline-block;
