@@ -32,7 +32,12 @@ $desktop: 850px;
 
 .main-plan {
   margin-top: -10px;
-  h1 {font-size: 50px;}
+  h1 {
+    font-size: 39px;
+    @media (min-width: $tablet-portrait) {
+      font-size: 50px;
+    }
+  }
   h2 {font-size: 18px;}
   padding: 20px;
   @media (min-width: $desktop) {
@@ -137,7 +142,10 @@ ul.devices {
     #dataplan-slider {
       cursor: pointer;
       height: 100%;
-      width: 93%;
+      width: 90%;
+      @media (min-width: $tablet-portrait) {
+         width: 93%;
+      }
       border: none;//reset
       background: none;//reset
       .ui-slider-handle {
