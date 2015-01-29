@@ -139,11 +139,13 @@ var updateAll = function() {// Run all functions
 }
 
 var noStores = function() {
+	ga('send', 'event', 'Find A Store', 'Button Click', 'Invalid Zip');
 	$('#store-list ul').empty();
   	$('#form-errors').show();
 }
 
 var success = function(stores) {
+	ga('send', 'event', 'Find A Store', 'Button Click', 'Valid Zip');
 	$('#form-errors').hide();
 	$(".store-locator").show();
 	//Clear addresses, error messages first
@@ -174,9 +176,9 @@ var success = function(stores) {
 	     +'<p class="get-directions"><strong><a target="_blank" href="https://www.google.com/maps/dir//'+address_1+'+'+address_2+',+'+city+',+'+state+'+'+zipcode+'">Get Directions >></a></strong></p>'
 	     +'</li>'); 
 	}
-	// $('#store-list ul .get-directions strong a').unbind('click').on('click',function() {
-	//   ga('send', 'event', 'Get Directions Link Click BH6 Results', 'Click', 'Get Store Directions - BH6');
-	// });
+	$('#store-list ul .get-directions strong a').unbind('click').on('click',function() {
+	   	ga('send', 'event', 'Find A Store', 'Button Click', 'Get Directions');
+		});
 	});
 };
 
