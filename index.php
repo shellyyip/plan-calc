@@ -29,7 +29,7 @@
 			<h2 class="darkbluetext">
 				Add between two and ten devices, choose your data amount, 
 				<span class="invisible-on-mobile"><br></span>
-				then stop by one of our stores to sign up.
+				then stop by one of our stores to sign up. Plus, get a $100 trade-in guarantee.
 			</h2>
 		</div>
 

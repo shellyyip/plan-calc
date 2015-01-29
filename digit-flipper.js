@@ -85,6 +85,5 @@ var flipDiffDigit = function(parentElem) {
 var flipDigits = function(num, parentElem) {
 	moveNewToOld(parentElem);
 	printSeparateDigits( num, parentElem.find('.new') );//new num
-	//flipThis( parentElem.find('.new') );
 	flipDiffDigit(parentElem);
 }
