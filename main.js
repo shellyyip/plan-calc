@@ -48,6 +48,14 @@ var toggleQuantity = function() {// Checks if device quantity is 0 and makes the
 		}
 	});
 }
+var addLeadingZeros = function(num) {
+	var str = num.toString();
+	if (str.length < 2) {
+		str = '0'+str;
+		return str;
+	}
+	return str;
+}
 var updateDeviceNum = function() {// Count devices
 	var total = 0;
 	$deviceList.each(function() {
@@ -77,8 +85,9 @@ var updateDeviceNum = function() {// Count devices
 	}
 	// ** Update & print total
 	totalPlan.totalDeviceNum = total;
-	printSeparateDigits( totalPlan.totalDeviceNum, $('.total-devices').find('.old') );//seed initial value
-	flipDigits( totalPlan.totalDeviceNum, $('.total-devices') );
+	var dblDigitTotal = addLeadingZeros(totalPlan.totalDeviceNum);
+	printSeparateDigits( dblDigitTotal, $('.total-devices').find('.old') );//seed initial value
+	flipDigits( dblDigitTotal, $('.total-devices') );
 }
 var calcCost = function() {// Calculate package cost
 	// ** Sum up devices

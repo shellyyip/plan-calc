@@ -1,4 +1,5 @@
 // Digit Flipper
+// Author: Shelly Njoo, shelly@shellynjoo.com
 
 //Takes a number and outputs a span for each digit into a parent element
 var printSeparateDigits = function(num, parentElem) {
@@ -57,7 +58,14 @@ var flipThis = function(el) {
 var flipDiffDigit = function(parentElem) {
 	var oldDigits = parentElem.find('.old').children();
 	var newDigits = parentElem.find('.new').children();
-	//if old & new have different amounts of children, flip all the digits in .new elem
+	//Give leading zeros visibility hidden
+	//Leading zeros are needed for device count because it goes from single digits to double, and leading zeros help pad out the container or otherwise the double-digit number collapses into a column
+	var $firstNewDigit = $(newDigits[0]);
+	if ($firstNewDigit.text() == 0) {
+		$firstNewDigit.css('visibility','hidden');
+	}
+
+	//Failsafe: if old & new have different amounts of children, flip all the digits in .new elem
 	if (oldDigits.length != newDigits.length) {
 		newDigits.each(function() {
 			flipThis( $(this) );
