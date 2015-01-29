@@ -80,6 +80,14 @@ strong{ font-family:"Stag Web USCC-Medium", sans-serif; }
   display: inline;
 }
 .clear{clear:both;}
+.clear:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
 .text-right {text-align:right;}
 .right {float:right;}
 .left {float:left;}

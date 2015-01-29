@@ -42,6 +42,9 @@
 }
 .flip, .digit {
   float: left;
+  &:after {
+    clear:both;
+  }
 }
 .flip-wrap {
 	position: relative;

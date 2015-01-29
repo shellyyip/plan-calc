@@ -1,10 +1,19 @@
+<!DOCTYPE html>
+<html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<script src="lib/js/usc-ga.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-42015805-1', 'auto');
+  ga('send', 'pageview');
+</script>
 </head>
 <body>
-<link href="style.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"/>
 <!--[if IE 9]>
 	<style>
 	/* Fallback for IE9 non-support for CSS3 animations */
@@ -114,16 +123,16 @@
 			<div class="totals">
 				<div class="device-data-quantity centered darkbluetext">
 					<div>
-						<div class="total-devices-container">
+						<div class="total-devices-container clear">
 							<div class="total-devices flip-wrap">
 								<h1 class="old"></h1> 
 								<h1 class="new"></h1> 
 							</div> 
 							<h1 class="flip-label">Devices</h1>
 						</div>
-
-						<h1 class="lightgraytext">&mdash; & &mdash;</h1>
-
+						<div>
+							<h1 class="lightgraytext">&mdash; & &mdash;</h1>
+						</div>
 						<div class="total-gbs-container">
 							<div class="total-gbs flip-wrap">
 								<h1 class="old"></h1> 
@@ -190,3 +199,4 @@
 <script src="digit-flipper.js"></script>
 <script src="main.js"></script>
 </body>
+</html>
