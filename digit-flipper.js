@@ -62,9 +62,10 @@ var flipDiffDigit = function(parentElem) {
 	//Leading zeros are needed for device count because it goes from single digits to double, and leading zeros help pad out the container or otherwise the double-digit number collapses into a column
 	var $firstNewDigit = $(newDigits[0]);
 	if ($firstNewDigit.text() == 0) {
+		console.log('we have a zero!');
+		console.log($firstNewDigit[0]);
 		$firstNewDigit.css('visibility','hidden');
 	}
-
 	//Failsafe: if old & new have different amounts of children, flip all the digits in .new elem
 	if (oldDigits.length != newDigits.length) {
 		newDigits.each(function() {

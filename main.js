@@ -48,7 +48,7 @@ var toggleQuantity = function() {// Checks if device quantity is 0 and makes the
 		}
 	});
 }
-var addLeadingZeros = function(num) {
+var addLeadingZeros = function(num) {//Adds leading zeros to solve spacing issues with single digits that turn into double digits. Not dynamic; better fn would also take max digits to add as many leading zeros as user wants. Returns a string
 	var str = num.toString();
 	if (str.length < 2) {
 		str = '0'+str;

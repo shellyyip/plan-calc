@@ -203,10 +203,29 @@ ul.devices {
       }
     }
     .total-gbs-container {
-      margin-left: 12%;
+      margin-left: 18%;
+    }
+    .total-devices-container {
+      margin-left: -6%;
+    }
+  }
+  .total-gbs, .total-devices { 
+    .old {
+      width: 44px;
+      @media (min-width: $mobile-landscape) {
+        width: 65px;
+      }
     }
   }
   // Total $
+  .total-cost-container {
+    .flip-label {
+      float: left;
+    }
+    .new {
+      width: 140px;
+    }
+  }
   .cost-per-month, .device-data-quantity {
     position: relative;
     &:before {//for vert centering
