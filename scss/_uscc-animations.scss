@@ -40,20 +40,26 @@
 .old, .new {
 	@extend .dirtyskybluebg;
 }
-.flip-label {
-  float: left;
-}
 .flip, .digit {
   float: left;
 }
 .flip-wrap {
 	position: relative;
 }
-.old, .new {
+.new {
 	position: absolute;
 	top: 0;
 	left: 0;
 }
 .new {
   z-index: 2;
+}
+
+.total-cost-container {
+  .flip-wrap {
+    float: left;
+  }
+  .flip-label {
+    float: left;
+  }
 }

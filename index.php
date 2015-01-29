@@ -132,8 +132,8 @@
 					<div>
 						<h2>Your cost per month</h2>
 						<div class="total-cost-container mediumbluetext">
+							<h1 class="flip-label">$</h1>
 							<div class="total-cost flip-wrap">
-								<h1 class="flip-label">$</h1>
 								<h1 class="old"></h1> 
 								<h1 class="new"></h1> 
 							</div>

@@ -217,7 +217,7 @@ ul.devices {
   .total-gbs {
     display: inline-block;
   }
-  .total-cost-container {
+  .total-cost-container h1, .total-cost h1 {
     font-size: 54px;
     letter-spacing: -5px;
     @media (min-width: $mobile-landscape) {

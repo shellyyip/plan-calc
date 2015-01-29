@@ -17,8 +17,11 @@ var printSeparateDigits = function(num, parentElem) {
 var moveNewToOld = function(parentElem) {
 	var oldEl = parentElem.find('.old');
 	var newEl = parentElem.find('.new');
-	oldEl.empty();
-	newEl.children().appendTo(oldEl);
+	//if new is not empty, move new elems to old
+	if (newEl.children().length > 0) {
+		oldEl.empty();
+		newEl.children().appendTo(oldEl);
+	}
 }
 
 //Call Flip

@@ -96,6 +96,7 @@ var calcCost = function() {// Calculate package cost
 	// ** Total
 	var finTotal = dataCost + deviceSubtotal;
 	// Print total
+	printSeparateDigits( finTotal, $('.total-cost').find('.old') );//seed initial value
 	flipDigits( finTotal, $('.total-cost') );
 }
 var debugReceipt = function() {// Print costs to console for debugging
