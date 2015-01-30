@@ -197,6 +197,7 @@
 <script src="lib/js/pointer_events_polyfill.js"></script>
 <script src="lib/js/flip.min.js"></script>
 <script src="digit-flipper.js"></script>
+<script src="lib/js/jquery.xdomainrequest.min.js"></script>
 <script src="main.js"></script>
 </body>
 </html>
