@@ -153,14 +153,12 @@ var printPlan = function() {
 
 var noStores = function() {
 	ga('send', 'event', 'Find A Store', 'Button Click', 'Invalid Zip');
-	ga('send', 'event', 'Find A Store', 'Button Click', 'Configuration Result - '+printPlan());
 	$('#store-list ul').empty();
   	$('#form-errors').show();
 }
 
 var success = function(stores) {
 	ga('send', 'event', 'Find A Store', 'Button Click', 'Valid Zip');
-	ga('send', 'event', 'Find A Store', 'Button Click', 'Configuration Result - '+printPlan());
 	$('#form-errors').hide();
 	$(".store-locator").show();
 	//Clear addresses, error messages first
@@ -251,6 +249,7 @@ $(document).ready(function(){
 
 	$("#zip-submit").on('click', function(e) {
 		e.preventDefault();
+		ga('send', 'event', 'Find A Store', 'Button Click', 'Configuration Result - '+printPlan());
 		$.ajax({
 			url: 'https://www.uscellularetf.com/api/store',
 			type: 'GET',
