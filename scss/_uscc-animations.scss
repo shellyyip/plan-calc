@@ -28,12 +28,14 @@
   -webkit-animation:pop-in 0.1s;
   -moz-animation:pop-in 0.1s;
   -ms-animation:pop-in 0.1s;
+  visibility: auto;
 }
 .pop-out {
   -webkit-animation:popout 0.1s;
   -moz-animation:popout 0.1s;
   -ms-animation:popout 0.1s;
   animation-fill-mode: forwards;
+  visibility: hidden;
 }
 
 //Digit Flipper styles
