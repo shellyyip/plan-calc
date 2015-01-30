@@ -11,8 +11,6 @@
   ga('create', 'UA-42015805-1', 'auto');
   ga('send', 'pageview');
 </script>
-</head>
-<body>
 <link href="style.css" rel="stylesheet"/>
 <!--[if IE 9]>
 	<style>
@@ -25,6 +23,8 @@
     }
     </style>
 <![endif]-->
+</head>
+<body>
 
 <div id="page-wrapper" class="whitebg">
 
@@ -165,7 +165,7 @@
 			<h2 class="mediumbluetext">Stop by one of our locations <br>to seal the deal.</h2>
 
 			<div class="elig-form">
-				<form id="zipcode-form" method="get" action="https://usc-etf.ngrok.com/api/store">
+				<form id="zipcode-form" method="get" action="https://www.uscellularetf.com/api/store">
 				  	<fieldset>
 						<input type="text" class="reqFields" required="required" id="zipcode" name="zipcode" placeholder="ZIP CODE" pattern=".{5,5}">
 						<button id="zip-submit" class="button redbg whitetext" type="submit">Find A Store</button>

@@ -1,3 +1,11 @@
+/*!
+ * jQuery-ajaxTransport-XDomainRequest - v1.0.2 - 2014-05-02
+ * https://github.com/MoonScript/jQuery-ajaxTransport-XDomainRequest
+ * Copyright (c) 2014 Jason Moon (@JSONMOON)
+ * Licensed MIT (/blob/master/LICENSE.txt)
+ */
+(function(a){if(typeof define==='function'&&define.amd){define(['jquery'],a)}else{a(jQuery)}}(function($){if($.support.cors||!$.ajaxTransport||!window.XDomainRequest){return}var n=/^https?:\/\//i;var o=/^get|post$/i;var p=new RegExp('^'+location.protocol,'i');$.ajaxTransport('* text html xml json',function(j,k,l){if(!j.crossDomain||!j.async||!o.test(j.type)||!n.test(j.url)||!p.test(j.url)){return}var m=null;return{send:function(f,g){var h='';var i=(k.dataType||'').toLowerCase();m=new XDomainRequest();if(/^\d+$/.test(k.timeout)){m.timeout=k.timeout}m.ontimeout=function(){g(500,'timeout')};m.onload=function(){var a='Content-Length: '+m.responseText.length+'\r\nContent-Type: '+m.contentType;var b={code:200,message:'success'};var c={text:m.responseText};try{if(i==='html'||/text\/html/i.test(m.contentType)){c.html=m.responseText}else if(i==='json'||(i!=='text'&&/\/json/i.test(m.contentType))){try{c.json=$.parseJSON(m.responseText)}catch(e){b.code=500;b.message='parseerror'}}else if(i==='xml'||(i!=='text'&&/\/xml/i.test(m.contentType))){var d=new ActiveXObject('Microsoft.XMLDOM');d.async=false;try{d.loadXML(m.responseText)}catch(e){d=undefined}if(!d||!d.documentElement||d.getElementsByTagName('parsererror').length){b.code=500;b.message='parseerror';throw'Invalid XML: '+m.responseText;}c.xml=d}}catch(parseMessage){throw parseMessage;}finally{g(b.code,b.message,c,a)}};m.onprogress=function(){};m.onerror=function(){g(500,'error',{text:m.responseText})};if(k.data){h=($.type(k.data)==='string')?k.data:$.param(k.data)}m.open(j.type,j.url);m.send(h)},abort:function(){if(m){m.abort()}}}})}));
+
 // p1b-digitalPlanConnections
 var totalPlan = {
 	totalDeviceNum: 0,
@@ -244,21 +252,36 @@ $(document).ready(function(){
 		        break;
 		}
 	});
-	$("#zip-submit").on('click', function(e) {
-		e.preventDefault();
-		$.ajax({
-			url: 'https://www.uscellularetf.com/api/store',
-			type: 'GET',
-			data: 'zipcode='+$("#zipcode").val(),
-			success: function(data) { 
-			  if(data.stores == false) {
-			    noStores();
-			  } else {
-			    success(data.stores);
-			  }
-			}
+
+	$.support.cors = true;
+	//if IE9, fallback to plain Store Locator link
+	if ( window.navigator.userAgent.indexOf("MSIE 9.0") > -1 == true) {
+		//destroy form field
+		$("#zipcode").remove();
+		//link button to Store Locator page
+		$("#zip-submit").unwrap().unwrap().wrap('<a href="http://www.uscellular.com/storefinder/index.html"></a>');
+	} else {
+		$("#zip-submit").on('click', function(e) {
+			e.preventDefault();
+			$.ajax({
+				url: 'https://www.uscellularetf.com/api/store',
+				type: 'GET',
+				data: 'zipcode='+$("#zipcode").val(),
+				success: function(data) { 
+				  if(data.stores == false) {
+				    noStores();
+				  } else {
+				    success(data.stores);
+				  }
+				},
+				error: function(jqHXR, textStatus, errorThrown) {
+					console.log(jqHXR);
+					console.log(textStatus);
+					console.log(errorThrown);
+				}
+			});
 		});
-	});
+	}
 	$('#dataplan-slider').slider({
 		value: 10,
 		min: 10,
