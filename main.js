@@ -18,7 +18,7 @@ $deviceList.each(function() {
 
 // **** Data Plans
 var dataPlans = [
-	{gbs: 10, cost: 90},
+	{gbs: 8, cost: 100},
 	{gbs: 12, cost: 110},
 	{gbs: 14, cost: 120},
 	{gbs: 16, cost: 130},
@@ -270,24 +270,35 @@ $(document).ready(function(){
 		});
 	});
 	
+	//Gather up gb increments for slider
+	var gbValues = [];
+	for (var i=0;i<dataPlans.length;i++) {
+		gbValues.push( dataPlans[i].gbs );
+	}
+	//slider config below accommodates a non-linear step size value, per http://stackoverflow.com/questions/967372/jquery-slider-how-to-make-step-size-change 
+	//in order to change a value on the slider, all the user needs to do now is change dataPlans array
 	$('#dataplan-slider').slider({
-		value: 10,
-		min: 10,
-		max: 20,
-		step: 2,
+		value: 0,
+		min: 0,
+		max: gbValues.length-1,
+		step: 1,
 		slide: function( event, ui ) {
 			var parent = $('.total-gbs');
-			$( "#dataplan" ).val( ui.value );
-			totalPlan.totalGbs = ui.value;
-			flipDigits( ui.value, parent );
+			var realVal = gbValues[ui.value];//replace slider val with corresponding GB val
+			realVal = addLeadingZeros(realVal);
+			$( "#dataplan" ).val( realVal );
+			totalPlan.totalGbs = realVal;
+			flipDigits( realVal, parent );
 			calcCost();
+			debugReceipt();
 			//GA Tracking
 			ga('send', 'event', 'Choose Data', 'Button Click', 'Change GB');
 		}
 	});
 
 	//Seed initial slider values
-	var sliderVal = $( "#dataplan-slider" ).slider( "value" );
+	var sliderVal = gbValues[ $( "#dataplan-slider" ).slider( "value" ) ];
+	sliderVal = addLeadingZeros(sliderVal);
 	$( "#dataplan" ).val( sliderVal );
 	totalPlan.totalGbs = sliderVal;
 	printSeparateDigits( sliderVal, $('.total-gbs').find('.old') );
