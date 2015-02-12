@@ -301,7 +301,15 @@ $(document).ready(function(){
 	sliderVal = addLeadingZeros(sliderVal);
 	$( "#dataplan" ).val( sliderVal );
 	totalPlan.totalGbs = sliderVal;
-	printSeparateDigits( sliderVal, $('.total-gbs').find('.old') );
+	// * Print value, and add+hide leading zeros if needed
+	var gbsEl = $('.total-gbs').find('.old');
+	printSeparateDigits( sliderVal, gbsEl );
+	// * Hiding leading zeros logic from flipDiffDigit fn in digit-flipper.js
+	var $firstDigit = $(gbsEl.children()[0]);
+	if ($firstDigit.text() == 0) {
+		$firstDigit.addClass('leading-zero');
+	}
+
 
 	//IE pointer-events:none; polyfill
 	PointerEventsPolyfill.initialize({});
