@@ -18,7 +18,7 @@ $deviceList.each(function() {
 
 // **** Data Plans
 var dataPlans = [
-	{gbs: 8, cost: 100},
+	{gbs: 10, cost: 90},
 	{gbs: 12, cost: 110},
 	{gbs: 14, cost: 120},
 	{gbs: 16, cost: 130},
