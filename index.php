@@ -15,6 +15,7 @@
 </script>
 
 <link href="style.css" rel="stylesheet"/>
+<link href="lib/css/jquery-ui.min.css" rel="stylesheet"/>
 </head>
 <body>
 
