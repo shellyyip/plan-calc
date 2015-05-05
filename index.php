@@ -28,7 +28,7 @@
 				<span class="darkbluetext">custom fit for you.</span>
 			</h1>
 			<h2 class="darkbluetext">
-				Add between two and ten devices, choose your data amount, 
+				Add between two and ten devices, choose your data amount,
 				<span class="invisible-on-mobile"><br></span>
 				then stop by one of our stores to sign up. Plus, get a $100 trade-in guarantee.
 			</h2>
@@ -95,16 +95,16 @@
 			<div class="dataplans">
 				<h2 class="centered">Choose your shared data.</h2>
 				<input type="text" id="dataplan" readonly hidden>
-				<h2 class="inlineblock label-slider">8GB</h2>
+				<h2 class="inlineblock label-slider">10GB</h2>
 				<div class="dataplan-slider-container">
 					<div id="dataplan-slider"></div>
 					<div class="slider-ticks">
-						<span>&bull;</span> 
-						<span>&bull;</span> 
-						<span>&bull;</span> 
-						<span>&bull;</span> 
-						<span>&bull;</span> 
-						<span>&bull;</span> 
+						<span>&bull;</span>
+						<span>&bull;</span>
+						<span>&bull;</span>
+						<span>&bull;</span>
+						<span>&bull;</span>
+						<span>&bull;</span>
 						<span class="justify-break"></span>
 					</div>
 				</div>
@@ -117,9 +117,9 @@
 					<div>
 						<div class="total-devices-container clear">
 							<div class="total-devices flip-wrap">
-								<h1 class="old"></h1> 
-								<h1 class="new"></h1> 
-							</div> 
+								<h1 class="old"></h1>
+								<h1 class="new"></h1>
+							</div>
 							<h1 class="flip-label">Devices</h1>
 						</div>
 						<div>
@@ -127,8 +127,8 @@
 						</div>
 						<div class="total-gbs-container">
 							<div class="total-gbs flip-wrap">
-								<h1 class="old"></h1> 
-								<h1 class="new"></h1> 
+								<h1 class="old"></h1>
+								<h1 class="new"></h1>
 							</div>
 							<h1 class="flip-label">GB</h1>
 						</div>
@@ -141,8 +141,8 @@
 						<div class="total-cost-container mediumbluetext">
 							<h1 class="flip-label">$</h1>
 							<div class="total-cost flip-wrap">
-								<h1 class="old"></h1> 
-								<h1 class="new"></h1> 
+								<h1 class="old"></h1>
+								<h1 class="new"></h1>
 							</div>
 						</div>
 					</div>
@@ -157,7 +157,7 @@
 			<h2 class="mediumbluetext">Stop by one of our locations <br>to seal the deal.</h2>
 
 			<div class="elig-form">
-				<form id="zipcode-form" method="get" action="https://www.uscellularetf.com/api/store">
+				<form id="zipcode-form" method="get" action="https://staging.uscellularetf.com/api/store">
 				  	<fieldset>
 						<input type="text" class="reqFields" required="required" id="zipcode" name="zipcode" placeholder="ZIP CODE" pattern=".{5,5}">
 						<button id="zip-submit" class="button redbg whitetext" type="submit">Find A Store</button>

@@ -18,7 +18,7 @@ $deviceList.each(function() {
 
 // **** Data Plans
 var dataPlans = [
-	{gbs: 8, cost: 100},
+	{gbs: 10, cost: 90},
 	{gbs: 12, cost: 110},
 	{gbs: 14, cost: 120},
 	{gbs: 16, cost: 130},
@@ -26,7 +26,7 @@ var dataPlans = [
 	{gbs: 20, cost: 150}
 ];
 
-// **** Functions 
+// **** Functions
 var toggleMinus = function() {// Checks if minus button will make quantity go negative, and toggles on/off accordingly
 	$deviceList.each(function() {
 		var $this = $(this);
@@ -42,7 +42,7 @@ var toggleQuantity = function() {// Checks if device quantity is 0 and makes the
 	$deviceList.each(function() {
 		var $this = $(this);
 		var num = $this.data('num');
-		if (num == 0) {	
+		if (num == 0) {
 			//hide
 			$this.find('.quantity').removeClass('pop-in').addClass('pop-out');
 		} else {
@@ -107,8 +107,8 @@ var calcCost = function() {// Calculate package cost
 	}
 	// ** Get data plan cost
 	var gbs = $( "#dataplan" ).val();
-	var obj = $.grep(dataPlans, function(e){ 
-		return e.gbs == gbs; 
+	var obj = $.grep(dataPlans, function(e){
+		return e.gbs == gbs;
 	});
 	var dataCost = obj[0].cost;
 	// ** Total
@@ -132,8 +132,8 @@ var debugReceipt = function() {// Print costs to console for debugging
 	console.log('Device Subtotal: $'+deviceSubtotal);
 	// ** Get data plan cost
 	var gbs = $( "#dataplan" ).val();
-	var obj = $.grep(dataPlans, function(e){ 
-		return e.gbs == gbs; 
+	var obj = $.grep(dataPlans, function(e){
+		return e.gbs == gbs;
 	});
 	var dataCost = obj[0].cost;
 	console.log('Data Subtotal: $'+dataCost);
@@ -178,7 +178,7 @@ var success = function(stores) {
 	     +state+' '
 	     +zipcode+'</br>'
 	     +'<p class="get-directions"><strong><a target="_blank" href="https://www.google.com/maps/dir//'+address_1+'+'+address_2+',+'+city+',+'+state+'+'+zipcode+'">Get Directions >></a></strong></p>'
-	     +'</li>'); 
+	     +'</li>');
 	} else {
 	  $('#store-list ul').append('<li>'
 	     +'<p class="store-name"><strong>'+stores[i].name+'</strong></p>'
@@ -187,7 +187,7 @@ var success = function(stores) {
 	     +state+' '
 	     +zipcode+'</br>'
 	     +'<p class="get-directions"><strong><a target="_blank" href="https://www.google.com/maps/dir//'+address_1+'+'+address_2+',+'+city+',+'+state+'+'+zipcode+'">Get Directions >></a></strong></p>'
-	     +'</li>'); 
+	     +'</li>');
 	}
 	$('#store-list ul .get-directions strong a').unbind('click').on('click',function() {
 	   	ga('send', 'event', 'Find A Store', 'Button Click', 'Get Directions');
@@ -197,11 +197,11 @@ var success = function(stores) {
 
 // **** Init
 $(document).ready(function(){
-	// **** Events 
+	// **** Events
 	$plus.on('click', function() {
 		var device = $(this).parents('[data-device]').data('device');
-		var obj = $.grep(allDevices, function(e){ 
-			return e.device == device; 
+		var obj = $.grep(allDevices, function(e){
+			return e.device == device;
 		});
 		obj[0]['num']+=1;
 		updateAll();
@@ -223,8 +223,8 @@ $(document).ready(function(){
 	});
 	$minus.on('click', function() {
 		var device = $(this).parents('[data-device]').data('device');
-		var obj = $.grep(allDevices, function(e){ 
-			return e.device == device; 
+		var obj = $.grep(allDevices, function(e){
+			return e.device == device;
 		});
 		obj[0]['num']-=1;
 		updateAll();
@@ -251,11 +251,11 @@ $(document).ready(function(){
 		e.preventDefault();
 		ga('send', 'event', 'Find A Store', 'Button Click', 'Configuration Result - '+printPlan());
 		$.ajax({
-			url: 'https://www.uscellularetf.com/api/store',
+			url: 'https://staging.uscellularetf.com/api/store',
 			type: 'GET',
 			data: 'zipcode='+$("#zipcode").val(),
 			dataType: 'json',
-			success: function(data) { 
+			success: function(data) {
 			  if(data.stores == false) {
 			    noStores();
 			  } else {
@@ -269,13 +269,13 @@ $(document).ready(function(){
 			}
 		});
 	});
-	
+
 	//Gather up gb increments for slider
 	var gbValues = [];
 	for (var i=0;i<dataPlans.length;i++) {
 		gbValues.push( dataPlans[i].gbs );
 	}
-	//slider config below accommodates a non-linear step size value, per http://stackoverflow.com/questions/967372/jquery-slider-how-to-make-step-size-change 
+	//slider config below accommodates a non-linear step size value, per http://stackoverflow.com/questions/967372/jquery-slider-how-to-make-step-size-change
 	//in order to change a value on the slider, all the user needs to do now is change dataPlans array
 	$('#dataplan-slider').slider({
 		value: 0,
@@ -301,15 +301,7 @@ $(document).ready(function(){
 	sliderVal = addLeadingZeros(sliderVal);
 	$( "#dataplan" ).val( sliderVal );
 	totalPlan.totalGbs = sliderVal;
-	// * Print value, and add+hide leading zeros if needed
-	var gbsEl = $('.total-gbs').find('.old');
-	printSeparateDigits( sliderVal, gbsEl );
-	// * Hiding leading zeros logic from flipDiffDigit fn in digit-flipper.js
-	var $firstDigit = $(gbsEl.children()[0]);
-	if ($firstDigit.text() == 0) {
-		$firstDigit.addClass('leading-zero');
-	}
-
+	printSeparateDigits( sliderVal, $('.total-gbs').find('.old') );
 
 	//IE pointer-events:none; polyfill
 	PointerEventsPolyfill.initialize({});
